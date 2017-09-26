@@ -1,0 +1,37 @@
+{
+  "name": "godotengine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "resolve-url-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "scp2": "^0.5.0",
+    "simple-ssh": "^1.0.0",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0",
+    "webpack-svg-icon-system": "^0.3.4"
+  },
+  "dependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "ssh2": "^0.5.5",
+    "webpack-php-manifest": "^0.0.4"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "server": "tmux split-window -d 'php ../../artisan serve' && yarn watch",
+    "watch": "webpack --watch --config webpack.dev.js",
+    "deploy": "node deploy.js"
+  }
+}

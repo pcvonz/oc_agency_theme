@@ -1,0 +1,43 @@
+.u-visually-hidden {
+  display: none;
+}
+
+.icon {
+   svg{
+     width: 16px;
+     height: 16px;
+   }
+}
+
+// Typography
+$serif: "Theano Didot", serif;
+h1 {
+  font-family: $serif;
+  font-weight: 200;
+}
+h2 {
+  font-family: $serif;
+  font-weight: 200;
+}
+$sans-serif: "Fira Sans", sans-serif;
+html {
+  font-family: $sans-serif;
+}
+
+.main-page {
+  min-height: 607px;
+  width: 100vw;
+  overflow: hidden;
+  @include breakpoint($tablet) {
+    padding: 50px;
+    height: 100vh;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+

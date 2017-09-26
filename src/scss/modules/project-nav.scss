@@ -1,0 +1,32 @@
+.project-nav {
+  display: none;
+  @include breakpoint($tablet) {
+    display: flex;
+  }
+  align-items: center;
+  flex-direction: column;
+  p {
+    transform: rotate(90deg);
+    font-family: $serif;
+    background-color: white;
+  }
+  .nav-wrap {
+    width: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background-image: linear-gradient($coolblack,  5%, white, 5%, white, 90%, $coolblack,  90%, $coolblack);
+    background-size: 4px 10px;
+    a {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: $coolblack;
+    }
+    a#current {
+      background-color: $orange;
+    }
+  }
+}

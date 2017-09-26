@@ -1,0 +1,73 @@
+input[id=nav]{
+  display: none;
+}
+input[id=nav]:checked ~ .project-list {
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  @include breakpoint($tablet) {
+    position: relative;
+    width: 18em;
+  }
+}
+
+input[id=nav]:checked ~ label {
+  svg {
+    fill: white; 
+  }
+}
+label{
+  cursor: pointer;
+  z-index: 100;
+  svg {
+    height: 24px;
+    width: 24px;
+    fill: white;
+    @include breakpoint($tablet) {
+      fill: $coolblack;
+    }
+    top: 1.2em;
+    right: 1.2em;
+    position: fixed;
+    @include breakpoint($tablet) {
+      position: absolute;
+    }
+    transition: fill .2s;
+  }
+}
+.project-list {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+  color: white;
+  background-color: $coolblack;
+  transition: width .2s;
+  @include breakpoint($tablet) {
+    position: relative;
+  }
+  ul {
+    // Hide scroll bar
+    li:first-child {
+      margin-top: 2em;
+    }
+    li:hover {
+      background-color: $coolgray;
+    }
+    width: 20em;
+    height: 90%;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    a {
+      padding: 1em;
+    }
+    #selected {
+      background-color: $orange;
+    }
+
+  }
+}

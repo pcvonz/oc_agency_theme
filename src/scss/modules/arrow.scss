@@ -1,0 +1,16 @@
+a.arrow {
+  display: none;
+}
+@include breakpoint($tablet) {
+  a.arrow {
+    display: inline-block;
+    svg[role=img] {
+      padding: 7px 0 7px 0;
+      height: 50px;
+      background-color: $coolgray;
+      fill: $offwhite;
+      width: 60px;
+      border-bottom: 10px solid black;
+    }
+  }
+}

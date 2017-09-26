@@ -1,0 +1,11 @@
+nav.social-nav {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: center;
+  @include breakpoint($tablet) {
+    width: 32px;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

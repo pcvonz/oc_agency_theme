@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include breakpoint($tablet) {
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+

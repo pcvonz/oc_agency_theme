@@ -1,0 +1,21 @@
+<!-- Nav -->
+<nav id="layout-nav" class="" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle">
+                <span class="">Toggle navigation</span>
+                <span class=""></span>
+                <span class=""></span>
+                <span class=""></span>
+            </button>
+            <a class="navbar-brand" href="{{ 'home'|page }}">Brand</a>
+        </div>
+        <div>
+            <ul class="nav-items">
+                <li class="{% if this.page.id == 'robert' %}active{% endif %}"><a href="{{ 'robert'|page }}">Robert Von Zimmerman</a></li>
+                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Index</a></li>
+                <li class="{% if this.page.id == 'robert' %}active{% endif %}"><a href="{{ 'paul'|page }}">Paul Von Zimmerman</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
