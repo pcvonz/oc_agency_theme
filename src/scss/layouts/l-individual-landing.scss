@@ -2,8 +2,6 @@
   width: 100vw;
   @include breakpoint($tablet) {
     height: 100vh;
-  }
-  @include breakpoint($tablet) {
     min-height: 660px;
     padding: 50px;
   }
@@ -13,6 +11,7 @@
   .wrapper {
     // Need to make position relative
     // for the menu
+    overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -28,8 +27,8 @@
 }
 
 .individual-headshot {
-  width: 100vw;
   flex-grow: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,7 +37,7 @@
   animation-name: fadein;
   animation-duration: 2s;
   @include breakpoint($tablet) {
-    padding: $padding-headshot 0 $padding-headshot 0;
+    padding: 100px 0 120px;
   }
   h2 {
     &.highlight {
@@ -69,7 +68,7 @@
   a.arrow {
     @include breakpoint($tablet) {
       position: relative;
-      top: $padding-headshot + 30px;
+      bottom: -20%;
     }
   }
 }

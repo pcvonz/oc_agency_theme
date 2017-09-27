@@ -1,4 +1,4 @@
-$padding-headshot: 50px;
+$padding-headshot: 90px;
 @include breakpoint($tablet) {
   .headshot:nth-child(1) {
     border-right: 5px solid $coolblack;
@@ -28,7 +28,6 @@ $padding-headshot: 50px;
   }
   a.arrow {
     position: relative;
-    top: $padding-headshot + 30px;
   }
 }
 

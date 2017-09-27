@@ -3,7 +3,13 @@ a.arrow {
 }
 @include breakpoint($tablet) {
   a.arrow {
+    position: absolute;
     display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    z-index: 1000;
     svg[role=img] {
       padding: 7px 0 7px 0;
       height: 50px;

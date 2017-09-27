@@ -4,7 +4,9 @@ nav.social-nav {
   flex-direction: row;
   justify-content: center;
   @include breakpoint($tablet) {
-    width: 32px;
+    right: 0;
+    height: 100%;
+    position: absolute;
     justify-content: center;
     flex-direction: column;
   }
