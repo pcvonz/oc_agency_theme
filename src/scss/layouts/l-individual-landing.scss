@@ -1,31 +1,33 @@
-.l-individual-landing {
+.center-padding {
   width: 100vw;
   @include breakpoint($tablet) {
     height: 100vh;
     min-height: 660px;
     padding: 50px;
   }
+}
+.l-individual-landing {
   display: flex;
   justify-content: center;
   align-items: center;
-  .wrapper {
-    // Need to make position relative
-    // for the menu
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    max-width: 1000px;
-    max-height: 660px;
-    @include breakpoint($tablet) {
-      flex-direction: row;
-    }
-  }
 }
 
+.wrapper {
+  // Need to make position relative
+  // for the menu
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 660px;
+  @include breakpoint($tablet) {
+    flex-direction: row;
+  }
+}
 .individual-headshot {
   flex-grow: 1;
   height: 100%;

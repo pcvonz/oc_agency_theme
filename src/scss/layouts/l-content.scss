@@ -1,7 +1,14 @@
 .l-content {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
+  a.arrow {
+    top: 50%;
+    right: 50%;
+    width: 44px;
+    height: 32px;
+  }
   div {
     width: 50%;
     img {

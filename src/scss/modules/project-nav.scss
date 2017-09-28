@@ -1,6 +1,7 @@
 .project-nav {
   display: none;
   @include breakpoint($tablet) {
+    width: 20px;
     display: flex;
   }
   align-items: center;
@@ -24,9 +25,12 @@
       height: 6px;
       border-radius: 100%;
       background-color: $coolblack;
+      transition: all .2s;
     }
     a#current {
       background-color: $orange;
+      width: 10px;
+      height: 10px;
     }
   }
 }

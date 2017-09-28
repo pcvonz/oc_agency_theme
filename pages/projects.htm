@@ -1,0 +1,27 @@
+title = "projects"
+url = "/projects/:project_name?"
+layout = "nonav"
+is_hidden = 0
+
+[itemPage]
+id = "{{ :project_name }}"
+==
+
+{% set item = itemPage.item %}
+{% set amountOfItems = items|length %}
+
+<div class="center-padding">
+  <div class="l-content-page border">
+    <div class="banner">
+      <img src="{{ item.banner.path }}">
+    </div>
+    <div class="percentage-bar">
+    </div>
+    <div class="wrapper menu">
+      <h1> {{ item.title }} </h1>
+    </div>
+    <div class="written-content">
+      {{ item.description|raw }}
+    </div>
+  </div>
+</div>

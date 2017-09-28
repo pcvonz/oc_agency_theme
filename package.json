@@ -25,7 +25,10 @@
   },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
+    "es6-tween": "^3.8.24",
+    "scroll-js": "^1.7.1",
     "ssh2": "^0.5.5",
+    "tweenjs": "^1.0.2",
     "webpack-php-manifest": "^0.0.4"
   },
   "scripts": {

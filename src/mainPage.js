@@ -2,8 +2,7 @@ let barTime = {
   duration: 100,
   fill: 'forwards',
   iterations: 1
-}
-
+} 
 let topBar = [
   {
     transform: 'translatey(0) translatex(0) rotate(0)'
@@ -74,6 +73,11 @@ function changeHash() {
   if (window.location.hash) {
     document.querySelector('#current').id = ''
     document.querySelector('a[href="'+window.location.hash+'"]').id = 'current';
+    if (window.location.hash != '#home') {
+      document.querySelector('label > svg').style.fill = 'white';
+    } else {
+      document.querySelector('label > svg').style.fill = '';
+    }
   }
 }
 changeHash();
@@ -192,14 +196,14 @@ function changeSlide(scroll) {
   if (scrollAccum > 3) {
     if(scrollList.getObj.next != null) {
       scrollList.setObj = scrollList.getObj.next;
-      lSlider.scrollTop = scrollList.getObj.curr.offsetTop;
     }
+    window.location.hash = scrollList.getObj.curr.id;
     scrollAccum = 0;
   }
   else if (scrollAccum < -3) {
     if(scrollList.getObj.prev != null) {
       scrollList.setObj = scrollList.getObj.prev;
-      lSlider.scrollTop = scrollList.getObj.curr.offsetTop;
+       window.location.hash = scrollList.getObj.curr.id;
     }
     scrollAccum = 0;
   }
