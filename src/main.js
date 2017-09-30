@@ -1,12 +1,16 @@
+// Main javascript file, should be imported on every page
+//
+//
 // Svg 
 import arrowRight from './svg/arrow_right.svg';
 import arrowLeft from './svg/arrow_down.svg';
 import envelopeClosed from './svg/envelope-closed.svg';
 import octocat from './svg/octocat.svg';
+
 import doc from './svg/document.svg';
 import menu from './svg/menu.svg';
 import './style.scss';
-import './mainPage.js';
+import polyfill from 'smoothscroll-polyfill';
 
 // Add svg to dom 
 // https://github.com/stowball/webpack-svg-icon-system

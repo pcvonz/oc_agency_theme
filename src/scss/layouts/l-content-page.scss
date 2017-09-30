@@ -1,4 +1,7 @@
 .l-content-page {
+  .description {
+    max-width: 400px;
+  }
   .banner {
     background-color: $coolblack;
     width: 100%;
@@ -7,6 +10,12 @@
     img {
       height: 100%;
     }
+  }
+  .intro {
+    padding: 0 40px;
+  }
+  .written-content {
+    padding: 0 40px;
   }
   height: 100%;
 }

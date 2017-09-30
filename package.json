@@ -27,13 +27,14 @@
     "breakpoint-sass": "^2.7.1",
     "es6-tween": "^3.8.24",
     "scroll-js": "^1.7.1",
+    "smoothscroll-polyfill": "^0.4.0",
     "ssh2": "^0.5.5",
     "tweenjs": "^1.0.2",
     "webpack-php-manifest": "^0.0.4"
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "tmux split-window -d 'php ../../artisan serve' && yarn watch",
+    "server": "tmux split-window -d 'php-xdebug -t ../../' && yarn watch",
     "watch": "webpack --watch --config webpack.dev.js",
     "deploy": "node deploy.js"
   }

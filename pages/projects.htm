@@ -6,22 +6,48 @@ is_hidden = 0
 [itemPage]
 id = "{{ :project_name }}"
 ==
-
 {% set item = itemPage.item %}
 {% set amountOfItems = items|length %}
 
 <div class="center-padding">
-  <div class="l-content-page border">
-    <div class="banner">
-      <img src="{{ item.banner.path }}">
-    </div>
+  <div class="hide-scrollbar min-height l-content-page border">
     <div class="percentage-bar">
     </div>
-    <div class="wrapper menu">
-      <h1> {{ item.title }} </h1>
-    </div>
-    <div class="written-content">
-      {{ item.description|raw }}
+    <div class="scroll">
+      <div class="banner">
+        <img src="{{ item.banner.path }}">
+      </div>
+      <div class="intro">
+        <div class="full-width">
+          <h1> {{ item.title }} </h1>
+        </div>
+        <div class="flex-row">
+          <div class="">
+            <h3> Year </h3>
+            <p>{{ item.year }}</p>
+          </div>
+          <div class="">
+            <h3> Index </h3>
+            {% for nav in itemPage.section %}
+              <ul class="nav"> 
+                <a href="#{{ nav.section_title}}">
+                  {{ nav.section_title }}
+                </a>
+              </ul>
+            {% endfor %}
+          </div>
+          <div class="description flex-grow">
+            <h3> Short Description </h3>
+            {{ item.short_description|raw }}
+          </div>
+        </div>
+      </div>
+      <div class="written-content">
+        {% for desc in itemPage.section %}
+        <h2 id="{{ desc.section_title }}">{{ desc.section_title }}</h2>
+          {{ desc.section|raw }}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

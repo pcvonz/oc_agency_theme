@@ -11,7 +11,7 @@ limit = 5
 {% set item = itemGrid.items %}
 {% set amountOfItems = items|length %}
 <div class="center-padding l-individual-landing">
-  <div class="wrapper border">
+  <div class="min-height wrapper border">
     <nav class="project-nav fadein"> 
       <p> 0/{{ amountOfItems }} </p>
       <div class="nav-wrap">
@@ -130,7 +130,7 @@ limit = 5
   <nav class="project-list"> 
       <ul>
         {% for item in items %}
-        <li class="nav-item"> <a href="{{ item.slug }}"> {{ item.title }} </a></li>
+        <li class="nav-item"> <a href="/projects/{{ item.slug }}"> {{ item.title }} </a></li>
         {% endfor %}
       </ul>
     </nav>

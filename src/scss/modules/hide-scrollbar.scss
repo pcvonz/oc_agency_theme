@@ -1,0 +1,8 @@
+.hide-scrollbar {
+  overflow: hidden;
+  &>.scroll {
+    width: 105%;
+    height: 105%;
+    overflow: scroll;
+  }
+}

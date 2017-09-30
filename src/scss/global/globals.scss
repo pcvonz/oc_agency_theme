@@ -11,6 +11,7 @@
 
 // Typography
 $serif: "Theano Didot", serif;
+$sans-serif: "Fira Sans", sans-serif;
 h1 {
   font-family: $serif;
   font-weight: 200;
@@ -19,7 +20,11 @@ h2 {
   font-family: $serif;
   font-weight: 200;
 }
-$sans-serif: "Fira Sans", sans-serif;
+h3 {
+  font-family: $sans-serif;
+  font-weight: 600;
+  font-size: .8em;
+}
 html {
   font-family: $sans-serif;
 }
@@ -41,3 +46,21 @@ html {
   box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+  color: $coolblack;
+  transition: color .2s;
+}
+a:hover {
+  color: lighten($coolblack, 40%);
+
+}
+
+.full-width {
+  width: 100%;
+}
+
+ul.nav {
+  margin: 0;
+  padding: 0;
+}

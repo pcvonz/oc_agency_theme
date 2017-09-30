@@ -5,7 +5,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const SvgStorePlugin = require('webpack-svg-icon-system/lib/SvgStorePlugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main:  './src/main.js',
+    landing: './src/landingPage.js'
+  },
   output: {
     filename: '[name].app.js',
     path: path.resolve(__dirname, 'assets'),

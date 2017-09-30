@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.min-height {
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 660px;
+}
 .wrapper {
   // Need to make position relative
   // for the menu
@@ -20,10 +26,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  max-width: 1000px;
-  max-height: 660px;
   @include breakpoint($tablet) {
     flex-direction: row;
   }
