@@ -2,6 +2,10 @@
   display: none;
 }
 
+.relative {
+  position: relative;
+}
+
 .icon {
    svg{
      width: 16px;
@@ -61,6 +65,7 @@ a:hover {
 }
 
 ul.nav {
+  list-style: none;
   margin: 0;
   padding: 0;
 }

@@ -1,0 +1,31 @@
+.block-nav {
+  li {
+    padding: .3em;
+    margin-left: -.3em;
+    overflow: visible;
+    position: relative;
+    a {
+      color: $coolblack;
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+    div {
+      transition: all .2s;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: -100;
+      background-color: $coolblack;
+    }
+  &:hover {
+    a {
+      color: white;
+    }
+    div {
+      width: 100%;
+    }
+  }
+  }
+}

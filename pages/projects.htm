@@ -1,6 +1,6 @@
 title = "projects"
 url = "/projects/:project_name?"
-layout = "nonav"
+layout = "project"
 is_hidden = 0
 
 [itemPage]
@@ -10,8 +10,12 @@ id = "{{ :project_name }}"
 {% set amountOfItems = items|length %}
 
 <div class="center-padding">
-  <div class="hide-scrollbar min-height l-content-page border">
-    <div class="percentage-bar">
+  <div class="relative hide-scrollbar min-height l-content-page border">
+    <div id="scrollbar">
+      <div class="scroll-container">
+        <div class="inner-scroll">
+        </div>
+      </div>
     </div>
     <div class="scroll">
       <div class="banner">
@@ -26,15 +30,18 @@ id = "{{ :project_name }}"
             <h3> Year </h3>
             <p>{{ item.year }}</p>
           </div>
-          <div class="">
+          <div class="index">
             <h3> Index </h3>
-            {% for nav in itemPage.section %}
-              <ul class="nav"> 
-                <a href="#{{ nav.section_title}}">
-                  {{ nav.section_title }}
-                </a>
+              <ul class="block-nav nav"> 
+              {% for nav in itemPage.section %}
+                <li>
+                  <a href="#{{ str_snake(nav.section_title)}}">
+                    {{ nav.section_title }}
+                  </a>
+                  <div> </div>
+                </li>
+              {% endfor %}
               </ul>
-            {% endfor %}
           </div>
           <div class="description flex-grow">
             <h3> Short Description </h3>
@@ -44,7 +51,7 @@ id = "{{ :project_name }}"
       </div>
       <div class="written-content">
         {% for desc in itemPage.section %}
-        <h2 id="{{ desc.section_title }}">{{ desc.section_title }}</h2>
+        <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
           {{ desc.section|raw }}
         {% endfor %}
       </div>

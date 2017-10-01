@@ -7,7 +7,8 @@ const SvgStorePlugin = require('webpack-svg-icon-system/lib/SvgStorePlugin');
 module.exports = {
   entry: {
     main:  './src/main.js',
-    landing: './src/landingPage.js'
+    landing: './src/landingPage.js',
+    project: './src/projectPage.js'
   },
   output: {
     filename: '[name].app.js',
