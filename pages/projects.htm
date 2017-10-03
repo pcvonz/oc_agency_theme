@@ -11,6 +11,13 @@ id = "{{ :project_name }}"
 
 <div class="center-padding">
   <div class="relative hide-scrollbar min-height l-content-page border">
+    <div id="back-button">
+      <a href="/paul">
+        <svg role="img">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"/>
+        </svg>
+      <a href="/paul"></a>
+    </div>
     <div id="scrollbar">
       <div class="scroll-container">
         <div class="inner-scroll">
@@ -51,8 +58,10 @@ id = "{{ :project_name }}"
       </div>
       <div class="written-content">
         {% for desc in itemPage.section %}
-        <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
-          {{ desc.section|raw }}
+        <div class="content-page-section">
+          <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
+            {{ desc.section|raw }}
+        </div>
         {% endfor %}
       </div>
     </div>

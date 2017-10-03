@@ -3,7 +3,6 @@ input[id=nav]{
 }
 input[id=nav]:checked ~ .project-list {
   width: 100vw;
-  position: absolute;
   overflow: hidden;
   @include breakpoint($tablet) {
     position: relative;
@@ -36,6 +35,8 @@ label{
   }
 }
 .project-list {
+  height: 100vh;
+  position: fixed;
   width: 0;
   overflow: hidden;
   position: absolute;

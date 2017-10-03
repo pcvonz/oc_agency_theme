@@ -47,14 +47,21 @@ limit = 5
       {% for item in items %}
         <div id="{{ item.slug }}" class="l-content">
           <div>
-            <h2> {{ item.title }} </h2>
-            {{ item.description |raw }}
-          </div>
+            <div>
+              <h2> {{ item.title }} </h2>
+              {{ item.short_description |raw }}
+              <a class="arrow" href="/projects/{{ item.slug }}">
+                <svg role="img">
           <a class="arrow" href="/projects/{{ item.slug }}">
             <svg role="img">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
             </svg>
           </a>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
+                </svg>
+              </a>
+            </div>
+          </div>
           <div class="bk-coolblack">
             <img src="{{ item.banner.path }}"></img>
           </div>

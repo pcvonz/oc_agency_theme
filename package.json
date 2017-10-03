@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "server": "tmux split-window -d 'php-xdebug -t ../../ -S localhost:8000' && yarn watch",
+    "server": "tmux split-window -d 'php-xdebug -t ../../ -S 192.168.0.69:8000' && yarn watch",
     "watch": "webpack --watch --config webpack.dev.js",
     "deploy": "node deploy.js"
   }

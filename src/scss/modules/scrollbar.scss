@@ -3,11 +3,10 @@
   position: absolute;
   display: flex;
   align-items: center;
-  padding-left: 10px;
   .scroll-container {
     height: 80%;
-    width: 20px;
-    border: 3px solid $coolblack;
+    width: 16px;
+    border: 2px solid $coolblack;
     background-color: white;
     .inner-scroll {
       width: 100%;

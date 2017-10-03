@@ -1,8 +1,10 @@
 .hide-scrollbar {
   overflow: hidden;
   &>.scroll {
-    width: 105%;
     height: 100%;
     overflow-y: scroll;
+    @include breakpoint($tablet) {
+      width: 105%;
+    }
   }
 }

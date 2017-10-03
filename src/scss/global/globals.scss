@@ -19,6 +19,7 @@ $sans-serif: "Fira Sans", sans-serif;
 h1 {
   font-family: $serif;
   font-weight: 200;
+  font-size: 1.8em;
 }
 h2 {
   font-family: $serif;
@@ -28,6 +29,11 @@ h3 {
   font-family: $sans-serif;
   font-weight: 600;
   font-size: .8em;
+}
+
+p {
+  line-height: 1.6em;
+  color: $coolblack;
 }
 html {
   font-family: $sans-serif;
@@ -55,10 +61,9 @@ a {
   color: $coolblack;
   transition: color .2s;
 }
-a:hover {
-  color: lighten($coolblack, 40%);
-
-}
+//a:hover {
+//  color: lighten($coolblack, 40%);
+//}
 
 .full-width {
   width: 100%;

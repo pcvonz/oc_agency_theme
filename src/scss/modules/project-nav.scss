@@ -1,4 +1,5 @@
 .project-nav {
+   margin-left: 10px;
   display: none;
   @include breakpoint($tablet) {
     width: 20px;

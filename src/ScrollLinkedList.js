@@ -5,9 +5,10 @@
 
 import ScrollObject from './ScrollObject';
 export default class ScrollLinkedList {
-  constructor (content) {
+  constructor (content, breakpoint) {
     this.sc = new ScrollObject(content[0]);
     this.length = length.length;
+    this.breakpoint = breakpoint;
     for(let i = 1; i < content.length; i++) {
       if (i > 0 && i < content.length-1) {
         let temp = new ScrollObject(content[i]);
@@ -22,6 +23,12 @@ export default class ScrollLinkedList {
         this.getObj.next = temp;
       }
     }
+  }
+  get getBreakpoint () {
+    return this.breakpoint;
+  }
+  set setBreakpoint (c) {
+    this.breakpoint = c
   }
   get getObj () {
     return this.sc;
@@ -41,7 +48,7 @@ export default class ScrollLinkedList {
     
   }
   scrollNext() {
-    if(this.getObj.next != null) {
+    if(this.getObj.next != null && window.innerWidth > this.getBreakpoint) {
       this.setObj = this.getObj.next;
       if(CSS.supports('scroll-behavior', 'smooth')) {
           window.location.hash = this.getObj.curr.id;
@@ -53,7 +60,7 @@ export default class ScrollLinkedList {
     }
   }
   scrollPrev () {
-    if(this.getObj.prev != null) {
+    if(this.getObj.prev != null && window.innerWidth > this.getBreakpoint) {
       this.setObj = this.getObj.prev;
       // set hash if scroll behavior smooth is supported
       if(CSS.supports('scroll-behavior', 'smooth')) {

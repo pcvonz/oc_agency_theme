@@ -14,7 +14,9 @@
   height: 100%;
   width: 100%;
   max-width: 1000px;
-  max-height: 660px;
+  @include breakpoint($tablet) {
+    max-height: 660px;
+  }
 }
 .wrapper {
   // Need to make position relative
@@ -38,7 +40,9 @@
   text-align: left;
   animation-name: fadein;
   animation-duration: 2s;
+  margin-bottom: 4em;
   @include breakpoint($tablet) {
+    margin-bottom: unset;
     padding: 100px 0 120px;
   }
   h2 {
@@ -46,7 +50,6 @@
       padding: 1em;
     }
     width: 100%;
-    text-align: center;
     @include breakpoint($tablet) {
       width: auto;
       &.highlight {
@@ -68,7 +71,10 @@
     }
   }
   a.arrow {
+    display: none;
     @include breakpoint($tablet) {
+      display: unset;
+      width: 62px;
       position: relative;
       bottom: -20%;
     }

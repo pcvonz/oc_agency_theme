@@ -30,7 +30,7 @@ window.addEventListener('hashchange', changeHash);
 // Set up smooth scroll between projects
 let map = ['#home'];
 let content = document.querySelectorAll('.content-wrapper > div');
-let scrollList = new ScrollLinkedList(content);
+let scrollList = new ScrollLinkedList(content, 800);
 
 
 // Set scroll area to be l-slider
