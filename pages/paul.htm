@@ -6,6 +6,10 @@ is_hidden = 0
 [itemGrid]
 category = "sort_order"
 direction = "asc"
+limit = 5
+
+[Profile]
+profile = "designer"
 ==
 {% set item = itemGrid.items %}
 {% set amountOfItems = items|length %}
@@ -29,7 +33,7 @@ direction = "asc"
             <h2 class="highlight bk-coolblack"> Paul Von Zimmerman</h2>
             <div class="profile paul">
             </div>
-            <div>
+            <div class="profile-info">
               <h2 class="left-border"> Web Developer / Designer </h2> 
               <p class="left-border">  
               Full stack developer experienced with

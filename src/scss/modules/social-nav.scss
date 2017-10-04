@@ -9,6 +9,7 @@ nav.social-nav {
   height: 0;
   z-index: 2000;
   @include breakpoint($tablet) {
+    z-index: 0;
     right: 0;
     width: 0;
     height: 100%;

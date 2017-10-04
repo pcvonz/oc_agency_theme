@@ -48,6 +48,11 @@ label{
   }
   ul {
     // Hide scroll bar
+    li {
+      a {
+        max-width: 70%;
+      }
+    }
     li:first-child {
       margin-top: 2em;
     }

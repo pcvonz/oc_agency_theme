@@ -7,11 +7,18 @@ a.arrow {
   bottom: 0;
   z-index: 1000;
   svg[role=img] {
+    transition: all .2s;
     padding: 7px 0 7px 0;
     height: 50px;
     background-color: $coolgray;
     fill: $offwhite;
     width: 60px;
     border-bottom: 10px solid black;
+  }
+  &:hover {
+    svg[role=img] {
+      fill: $coolblack;
+      background-color: $coollightgray;
+    }
   }
 }

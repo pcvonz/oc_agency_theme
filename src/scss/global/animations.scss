@@ -1,6 +1,11 @@
 .fadein {
   animation-name: fadein;
-  animation-duration: 2s;
+  animation-duration: 1s;
+}
+.slideIn-left {
+  animation-name: slideIn-left;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadein {
@@ -11,6 +16,18 @@
   to {
     opacity: 1;
     transform: translatey(0px);
+  }
+}
+
+
+@keyframes slideIn-left{
+  from {
+    opacity: 0;
+    transform: translatex(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0px);
   }
 }
 

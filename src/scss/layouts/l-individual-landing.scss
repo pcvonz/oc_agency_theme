@@ -37,13 +37,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  text-align: left;
+  text-align: center;
   animation-name: fadein;
   animation-duration: 2s;
   margin-bottom: 4em;
   @include breakpoint($tablet) {
     margin-bottom: unset;
     padding: 100px 0 170px;
+  }
+  .profile-info {
+    margin-top: 2em;
   }
   h2 {
     &.highlight {
