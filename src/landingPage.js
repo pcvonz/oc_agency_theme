@@ -7,6 +7,7 @@ import './MenuAnim.js';
 // javascript isn't available, disable slideshow
 document.querySelector('.l-slider').style = "overflow: hidden";
 
+
 // Only called if
 // A: Sidebar menu is used
 // B: CSS Property 'scroll-behavior: smooth' is supported
@@ -30,7 +31,13 @@ window.addEventListener('hashchange', changeHash);
 // Set up smooth scroll between projects
 let map = ['#home'];
 let content = document.querySelectorAll('.content-wrapper > div');
-let scrollList = new ScrollLinkedList(content, 800);
+
+let scrollList
+
+window.onload = function () {
+  scrollList = new ScrollLinkedList(content, 800);
+  scrollList.getCurrentScroll();
+}
 
 
 // Set scroll area to be l-slider
@@ -53,17 +60,15 @@ lSlider.addEventListener('wheel', function (e) {
 });
 
 // Switch between sections based on scroll amount
+// Caution! Not all browsers track the same scroll distance
 function changeSlide(scroll) {
-  scrollAccum += scroll;
-  if (scrollAccum > 3) {
+  (scroll > 0) ? scrollAccum+=1 : scrollAccum-=1;
+  if (scrollAccum > 2) {
     scrollList.scrollNext();
     scrollAccum = 0;
   }
-  else if (scrollAccum < -3) {
+  else if (scrollAccum < -2) {
     scrollList.scrollPrev();
     scrollAccum = 0;
   }
-  if(scrollList.getObj.curr.getBoundingClientRect().top != 60 ) {
-  }
 }
-

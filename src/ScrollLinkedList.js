@@ -24,6 +24,9 @@ export default class ScrollLinkedList {
       }
     }
   }
+  get getLength () {
+    return this.length;
+  }
   get getBreakpoint () {
     return this.breakpoint;
   }
