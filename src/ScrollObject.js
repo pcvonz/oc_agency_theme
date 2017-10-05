@@ -1,25 +1,25 @@
 // Helper class for scrollLinkedList
 export default class ScrollObject {
-  constructor(curr) {
-    this.c = curr;
+  constructor (curr) {
+    this.c = curr
   }
   set next (n) {
     this.n = n
   }
   set prev (p) {
-    this.p = p;
+    this.p = p
   }
-  set curr(c) {
-    this.c = c;
+  set curr (c) {
+    this.c = c
   }
   get curr () {
-    return this.c; 
+    return this.c
   }
   get next () {
-    return this.n; 
+    return this.n
   }
   get prev () {
-    return this.p;
+    return this.p
   }
   toString () {
     return `${this.c.id}`

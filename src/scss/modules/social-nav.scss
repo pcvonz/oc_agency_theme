@@ -1,3 +1,70 @@
+$border-width: 3px;
+.icon-link:nth-child(1) {
+  border: $border-width solid $coolblack;
+}
+.icon-link:last-child {
+  border: $border-width solid $coolblack;
+}
+.icon-link {
+  text-decoration: none;
+  border-left: $border-width solid $coolblack;
+  border-right: $border-width solid $coolblack;
+  background-color: white;
+  height: 32px;
+  width: 32px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  transition: width .2s, background-color .2s;
+  .social-text {
+    overflow: hidden;
+    width: 0;
+    transition: width .2s;
+  }
+  svg {
+    fill: $coolblack;
+  }
+  color: white;
+}
+
+.icon-link{
+  svg {
+    fill: white;
+  }
+  width: 100px;
+  background-color: $coolblack;
+  .social-text {
+    width: auto;
+  }
+  @include breakpoint($tablet) {
+    background-color: white;
+    width: 32px;
+    height: 32px;
+    .social-text {
+      width: 0;
+    }
+    svg {
+      fill: $coolblack;
+    }
+  }
+}
+@include breakpoint($tablet) {
+  .icon-link:hover {
+    svg {
+      fill: white;
+    }
+    img {
+      filter: invert(100%);
+    }
+    width: 100px;
+    background-color: $coolblack;
+    .social-text {
+      width: auto;
+    }
+  }
+}
 nav.social-nav {
   display: flex;
   align-items: flex-end;
@@ -8,6 +75,16 @@ nav.social-nav {
   width: 100%;
   height: 0;
   z-index: 2000;
+  .icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 16px;
+    }
+  }
   @include breakpoint($tablet) {
     z-index: 0;
     right: 0;

@@ -1,17 +1,19 @@
 title = "Von Zimmerman"
-url = "/paul"
+url = "/:profile?"
 layout = "nonav"
 is_hidden = 0
 
-[itemGrid]
-category = "sort_order"
-direction = "asc"
-limit = 5
-
 [Profile]
 profile = "designer"
+
+[landingPage]
+category = "insert tag"
+limit = 5
+
+[socialNav]
+profile = "designer"
 ==
-{% set item = itemGrid.items %}
+{% set item = landingPage.items %}
 {% set amountOfItems = items|length %}
 <div class="center-padding l-individual-landing">
   <div class="min-height wrapper border">
@@ -29,24 +31,7 @@ profile = "designer"
     </nav>
     <div class="l-slider">
       <div class="content-wrapper">
-          <div id="home" class="individual-headshot fadein "> 
-            <h2 class="highlight bk-coolblack"> Paul Von Zimmerman</h2>
-            <div class="profile paul">
-            </div>
-            <div class="profile-info">
-              <h2 class="left-border"> Web Developer / Designer </h2> 
-              <p class="left-border">  
-              Full stack developer experienced with
-              <span class="highlight bk-orange"> PHP </span>, <span class="highlight bk-orange">Node.js,</span> and <span class="highlight bk-orange">Python.</span> Always looking
-              Forward to the next big thing.
-              </p>
-            </div>
-            <a class="arrow" href="#{{ items[0].slug }}">
-              <svg role="img">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_down"/>
-              </svg>
-            </a>
-          </div>
+        {% component 'Profile' %}
       {% for item in items %}
         <div id="{{ item.slug }}" class="l-content">
           <div>
@@ -73,34 +58,7 @@ profile = "designer"
       </div>
     </div>
 
-    <nav class="social-nav fadein"> 
-      <a href="#" class="icon-link nav-item"> 
-        <div class="icon">
-          <svg role="img">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-octocat"/>
-          </svg>
-        </div>
-        <div class="social-text">
-           Github 
-        </div>
-      </a>
-      <a href="#" class="icon-link icon nav-item"> 
-        <svg role="img">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-envelope-closed"/>
-        </svg>
-        <div class="social-text">
-           Email
-        </div>
-      </a>
-      <a href="#" class="icon-link icon nav-item"> 
-        <svg role="img">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-document"/>
-        </svg>
-        <div class="social-text">
-          Résumé
-        </div>
-      </a>
-    </nav>
+    {% component 'socialNav' %}
   <input type="checkbox" id="nav"> </input>
   <label class="menuanim" for="nav">
     <svg 
