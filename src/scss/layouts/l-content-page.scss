@@ -1,14 +1,19 @@
 .l-content-page {
   #scrollbar {
     display: none;
-    padding-left: 25px;
+    padding-left: 15px;
     display: none;
     @include breakpoint($tablet) {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
   .description {
     max-width: 400px;
+  }
+  #back-button {
+    margin-bottom: 1em;
   }
   .banner {
     background-color: $coolblack;
@@ -39,9 +44,15 @@
       padding: 0 1rem 0 4rem;
     }
   }
+  .content-image {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
   .flex-row {
     flex-direction: column;
     @include breakpoint($tablet) {
+      max-width: 98%;
       flex-direction: row;
       div:first-child {
         padding: 0 .6rem;
@@ -49,7 +60,7 @@
     }
   }
   .content-page-section {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
     width: 95%;
   }
   height: 100%;

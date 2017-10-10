@@ -38,7 +38,6 @@
 }
 
 .individual-headshot {
-  margin-right: 2em;
   flex-grow: 1;
   height: 100%;
   display: flex;
@@ -50,6 +49,7 @@
   animation-duration: 2s;
   margin-bottom: 4em;
   @include breakpoint($tablet) {
+    margin-right: 2em;
     margin-bottom: unset;
     padding: 100px 0 170px;
   }

@@ -11,14 +11,14 @@ id = "{{ :project_name }}"
 
 <div class="center-padding slideIn-left">
   <div class="relative hide-scrollbar min-height l-content-page border">
-    <div id="back-button">
-      <a href="/paul">
-        <svg role="img">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"/>
-        </svg>
-      <a href="/paul"></a>
-    </div>
     <div id="scrollbar">
+      <div id="back-button">
+        <a href="/paul#{{ item.slug }}">
+          <svg role="img">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"/>
+          </svg>
+        <a href="/paul"></a>
+      </div>
       <div class="scroll-container">
         <div class="inner-scroll">
         </div>
@@ -52,7 +52,10 @@ id = "{{ :project_name }}"
           </div>
           <div class="description flex-grow">
             <h3> Short Description </h3>
-            {{ item.short_description|raw }}
+              {{ item.short_description|raw }}
+              {% if (item.item_link) %}
+                <p> <a href="{{ item.item_link }}"> View the project here </a> </p>
+              {% endif %}
           </div>
         </div>
       </div>

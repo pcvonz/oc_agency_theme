@@ -1,0 +1,44 @@
+.load-container{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: $coolblack;
+  z-index: 4000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  #loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  svg {
+    fill: none;
+    stroke: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    stroke-width: 10px;
+    stroke-dasharray: 1870;
+    stroke-dashoffset: 1870;
+  }
+  .anim {
+    animation-duration: 3s;
+    animation-name: stroke;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.45,.05,.55,.95);
+  }
+
+  @keyframes stroke {
+    from {
+      stroke-dashoffset: 1870;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

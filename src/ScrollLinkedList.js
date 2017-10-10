@@ -38,6 +38,7 @@ export default class ScrollLinkedList {
     this.sc = c
   }
   setCurrentScroll (hash) {
+    debugger
     while (this.sc.prev != null) {
       this.sc = this.sc.prev
     }
@@ -54,7 +55,9 @@ export default class ScrollLinkedList {
     }
     for (let i = 0; i < this.length; i++) {
       if ('#' + this.sc.curr.id === window.location.hash) {
-        this.sc.curr
+        this.sc.curr = this.sc.next
+        break
+      } else if (window.location.hash === '') {
         break
       }
       this.sc = this.sc.next

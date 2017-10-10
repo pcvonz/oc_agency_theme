@@ -8,7 +8,8 @@ module.exports = {
   entry: {
     main:  './src/main.js',
     landing: './src/landingPage.js',
-    project: './src/projectPage.js'
+    project: './src/projectPage.js',
+    important: './src/loadImportant.js'
   },
   output: {
     filename: '[name].app.js',

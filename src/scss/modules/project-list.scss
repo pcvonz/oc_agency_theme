@@ -22,7 +22,17 @@ label{
     height: 24px;
     width: 24px;
     fill: white;
+    background-color: $coolblack;
+    padding: 0 5px 2px 5px;
+    border-bottom: 5px solid $coolgray;
+    height: 35px;
+    width: 35px;
     @include breakpoint($tablet) {
+      padding: unset;
+      border-bottom: unset;
+      background-color: unset;
+      height: 24px;
+      width: 24px;
       fill: $coolblack;
     }
     top: 1.2em;
@@ -39,7 +49,6 @@ label{
   position: fixed;
   width: 0;
   overflow: hidden;
-  position: absolute;
   color: white;
   background-color: $coolblack;
   transition: width .2s;
@@ -74,6 +83,5 @@ label{
     #selected {
       background-color: $orange;
     }
-
   }
 }

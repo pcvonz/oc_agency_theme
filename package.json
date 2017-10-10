@@ -31,7 +31,7 @@
     "webpack-svg-icon-system": "^0.3.4",
     "stylelint": "^8.2.0",
     "stylelint-config-recommended": "^1.0.0",
-    "stylelint-scss": "^2.1.0",
+    "stylelint-scss": "^2.1.0"
   },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",

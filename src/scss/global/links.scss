@@ -1,0 +1,17 @@
+.written-content, .description {
+  a { 
+    color: $coolgray;
+  }
+  a:before {
+    display: inline-block;
+    content: "⧫";
+    width: .7em;
+    color: $coolgray;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  a:hover:before {
+    content: "⧫";
+    color: $coolblack;
+  }
+}
