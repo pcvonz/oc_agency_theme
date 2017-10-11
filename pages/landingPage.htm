@@ -15,6 +15,7 @@ profile = "designer"
 ==
 {% set item = landingPage.items %}
 {% set amountOfItems = items|length %}
+
 <div class="load-container">
   <div id="loader">
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -52,92 +53,97 @@ profile = "designer"
   </div>
 </div>
 
-<div class="center-padding l-individual-landing">
-  <div class="min-height wrapper border">
-    <nav class="project-nav fadein"> 
-      <p> 0/{{ amountOfItems }} </p>
-      <div class="nav-wrap">
-      <a id="current" href="#home" class="circle"> 
-      </a>
-      {% for item in items %}
-        <a href="#{{ item.slug }}" class="circle"> 
+
+<div class="center-padding l-individual-landing ">
+
+  <div class="outer-border min-height ">
+        {% partial "universe" %}
+    <div class="min-height wrapper border fadein">
+      <nav class="project-nav fadein"> 
+        <p> 0/{{ amountOfItems }} </p>
+        <div class="nav-wrap">
+        <a id="current" href="#home" class="circle"> 
         </a>
-      {% endfor %}
-      </div>
-      <p> {{ amountOfItems }}/{{ amountOfItems }} </p>
-    </nav>
-    <div class="l-slider">
-      <div class="content-wrapper">
-        {% component 'Profile' %}
-      {% for item in items %}
-        <div id="{{ item.slug }}" class="l-content">
-          <div>
-            <div>
-              <h2> {{ item.title }} </h2>
-              {{ item.short_description |raw }}
-              <a class="arrow" href="/projects/{{ item.slug }}">
-                <svg role="img">
-          <a class="arrow" href="/projects/{{ item.slug }}">
-            <svg role="img">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
-            </svg>
+        {% for item in items %}
+          <a href="#{{ item.slug }}" class="circle"> 
           </a>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
-                </svg>
-              </a>
+        {% endfor %}
+        </div>
+        <p> {{ amountOfItems }}/{{ amountOfItems }} </p>
+      </nav>
+      <div class="l-slider">
+        <div class="content-wrapper">
+          {% component 'Profile' %}
+        {% for item in items %}
+          <div id="{{ item.slug }}" class="l-content">
+            <div>
+              <div>
+                <h2> {{ item.title }} </h2>
+                {{ item.short_description |raw }}
+                <a class="arrow" href="/projects/{{ item.slug }}">
+                  <svg role="img">
+            <a class="arrow" href="/projects/{{ item.slug }}">
+              <svg role="img">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
+              </svg>
+            </a>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="bk-coolblack">
+              <img src="{{ item.banner.path }}"></img>
             </div>
           </div>
-          <div class="bk-coolblack">
-            <img src="{{ item.banner.path }}"></img>
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-    </div>
-
-    {% component 'socialNav' %}
-  <input type="checkbox" id="nav"> </input>
-  <label class="menuanim" for="nav">
-    <svg 
-       id="svg1977"
-       version="1.1"
-       viewBox="0 0 8 8"
-       height="8"
-       width="8">
-      <metadata
-         id="metadata1983">
-        <rdf:RDF>
-          <cc:Work
-             rdf:about="">
-            <dc:format>image/svg+xml</dc:format>
-            <dc:type
-               rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-            <dc:title></dc:title>
-          </cc:Work>
-        </rdf:RDF>
-      </metadata>
-      <defs
-         id="defs1981" />
-      <path
-         id="path1989"
-         transform="translate(0,1)"
-         d="M 0,0 V 1 H 8 V 0 Z" />
-      <path
-         id="path1987"
-         transform="translate(0,1)"
-         d="m 0,2.97 v 1 h 8 v -1 z" />
-      <path
-         id="path1975"
-         transform="translate(0,1)"
-         d="m 0,5.97 v 1 h 8 v -1 z" />
-    </svg>
-  </label>
-  <nav class="project-list"> 
-      <ul>
-        {% for item in items %}
-        <li class="nav-item"> <a href="/projects/{{ item.slug }}"> {{ item.title }} </a></li>
         {% endfor %}
-      </ul>
-    </nav>
+        </div>
+      </div>
+  
+      {% component 'socialNav' %}
+    <input type="checkbox" id="nav"> </input>
+    <label class="menuanim" for="nav">
+      <svg 
+         id="svg1977"
+         version="1.1"
+         viewBox="0 0 8 8"
+         height="8"
+         width="8">
+        <metadata
+           id="metadata1983">
+          <rdf:RDF>
+            <cc:Work
+               rdf:about="">
+              <dc:format>image/svg+xml</dc:format>
+              <dc:type
+                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              <dc:title></dc:title>
+            </cc:Work>
+          </rdf:RDF>
+        </metadata>
+        <defs
+           id="defs1981" />
+        <path
+           id="path1989"
+           transform="translate(0,1)"
+           d="M 0,0 V 1 H 8 V 0 Z" />
+        <path
+           id="path1987"
+           transform="translate(0,1)"
+           d="m 0,2.97 v 1 h 8 v -1 z" />
+        <path
+           id="path1975"
+           transform="translate(0,1)"
+           d="m 0,5.97 v 1 h 8 v -1 z" />
+      </svg>
+    </label>
+    <nav class="project-list"> 
+        <ul>
+          {% for item in items %}
+          <li class="nav-item"> <a href="/projects/{{ item.slug }}"> {{ item.title }} </a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>

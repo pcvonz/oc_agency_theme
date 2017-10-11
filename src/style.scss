@@ -3,8 +3,8 @@
 @import '~breakpoint-sass/stylesheets/breakpoint';
 
 // Globals
-@import './scss/global/animations';
 @import './scss/global/variables';
+@import './scss/global/animations';
 @import './scss/global/grid';
 @import './scss/global/links';
 @import './scss/global/lists';
@@ -36,5 +36,9 @@
 @import './scss/modules/block-nav';
 @import './scss/modules/back-button';
 @import './scss/modules/loader';
+@import './scss/modules/solar-system';
 
 
+// states
+
+@import './scss/states/hide';

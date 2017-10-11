@@ -1,5 +1,11 @@
 .border {
   @include breakpoint($tablet) {
     border: 10px solid $coolblack;
+
+  }
+}
+.outer-border {
+  @include breakpoint($tablet) {
+    border: 10px solid white;
   }
 }

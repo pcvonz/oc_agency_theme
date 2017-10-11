@@ -1,4 +1,14 @@
+.min-height-content-page {
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  transition: max-width .3s;
+  @include breakpoint($tablet) {
+    max-height: 1000px;
+  }
+}
 .l-content-page {
+  background-color: white;
   #scrollbar {
     display: none;
     padding-left: 15px;
@@ -41,7 +51,7 @@
   .written-content, .intro {
     padding: 0 1rem 0 1rem;
     @include breakpoint($tablet) {
-      padding: 0 1rem 0 4rem;
+      padding: 0 3rem 0 4rem;
     }
   }
   .content-image {

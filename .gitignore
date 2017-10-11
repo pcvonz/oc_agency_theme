@@ -1,4 +1,7 @@
 assets/*
 node_modules
 bower_components
-
+conf.json
+deploy.js
+deploy.sh
+example_conf.json

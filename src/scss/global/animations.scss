@@ -8,6 +8,23 @@
   animation-fill-mode: forwards;
 }
 
+.fadeblack {
+  animation-name: fadeblack;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+
+@keyframes fadeblack {
+  from {
+    background-color: $coolblack;
+  }
+  to {
+    background-color: unset;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

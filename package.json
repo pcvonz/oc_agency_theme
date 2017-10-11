@@ -22,18 +22,19 @@
     "scp2": "^0.5.0",
     "simple-ssh": "^1.0.0",
     "style-loader": "^0.18.2",
+    "stylelint": "^8.2.0",
+    "stylelint-config-recommended": "^1.0.0",
     "stylelint-config-standard": "^17.0.0",
+    "stylelint-scss": "^2.1.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.5.5",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
-    "webpack-svg-icon-system": "^0.3.4",
-    "stylelint": "^8.2.0",
-    "stylelint-config-recommended": "^1.0.0",
-    "stylelint-scss": "^2.1.0"
+    "webpack-svg-icon-system": "^0.3.4"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "breakpoint-sass": "^2.7.1",
     "normalize.css": "^7.0.0",
     "smoothscroll-polyfill": "^0.4.0",

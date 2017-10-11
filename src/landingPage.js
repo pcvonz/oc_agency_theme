@@ -1,73 +1,48 @@
 // Code for the landing page
+import playSplash from './splashLoader.js'
 import LinkedScrollList from 'linked-scroll-jack'
 import './MenuAnim.js'
 import Cookies from './cookies.js'
+import anime from 'animejs'
 
 let docCookies = new Cookies()
+
+let path = anime.path('#path1466')
+let pathTwo = anime.path('#path2')
+console.log(path())
+
+let motionPath = anime({
+  targets: '.follow',
+  translateX: path('x'), // Follow the x values from the path `Object`
+  translateY: path('y'), // Follow the y values from the path `Object`
+  easing: 'linear',
+  duration: 50000,
+  loop: true
+})
+let motionPathTwo = anime({
+  targets: '.follow2',
+  translateX: pathTwo('x'), // Follow the x values from the path `Object`
+  translateY: pathTwo('y'), // Follow the y values from the path `Object`
+  easing: 'linear',
+  duration: 80000,
+  loop: true
+})
 
 let scrollList
 let content = document.querySelectorAll('.content-wrapper > div')
 
 scrollList = new LinkedScrollList(content, 800)
 
-let loadingFinished = [
-  {
-    opacity: '1',
-    paddingTop: '0'
 
-  },
-  {
-    opacity: '0',
-    paddingTop: '200px',
-    display: 'none'
-  }
-]
-
-let stroke = [
-  {
-    strokeDashoffset: '1870'
-  },
-  {
-    strokeDashoffset: '0'
-  }
-]
-
-let strokeTime = {
-  duration: 2000,
-  fill: 'forwards',
-  iterations: 1
-}
-
-let loadingFinishedTime = {
-  duration: 500,
-  fill: 'forwards',
-  iterations: 1,
-  easing: 'ease-in-out'
-}
-let loading = document.querySelector('.load-container')
-if (window.location.hash === '') {
-  loading.style = 'display: flex;'
-}
-
+let minWidthContainer = document.querySelectorAll('.min-height')
 window.onload = function () {
+  // initiate solar system 
+  document.querySelector('.follow').setAttribute('class', document.querySelector('.follow').getAttribute('class') + ' full-opacity')
+  document.querySelector('.follow2').setAttribute('class', document.querySelector('.follow2').getAttribute('class') + ' full-opacity')
+
+  playSplash()
+  // Set scrolllist to current node
   scrollList.setCurrentNode(window.location.hash)
-  let svg = document.querySelector('#loader svg')
-  if (window.location.hash === '') {
-    svg.animate(
-      stroke,
-      strokeTime
-    ).onfinish = () => {
-      setTimeout(() => {
-        loading.animate(
-          loadingFinished,
-          loadingFinishedTime
-        ).onfinish = () => {
-          loading.style = 'display: none'
-        }
-      }, 500)
-    }
-  }
-  docCookies.setItem('splash_vonzimmerman', 'accessed', 150)
 }
 
 // Set overflow to hidden. On the off change
@@ -91,6 +66,17 @@ function changeHash (ev) {
       document.querySelector('label > svg').style.fill = 'white'
     } else {
       document.querySelector('label > svg').style.fill = ''
+    }
+
+    // Change width based on hash
+    if (window.location.hash !== '#home') {
+      minWidthContainer.forEach((el) => {
+        el.style = 'max-width: 1200px'
+      })
+    } else {
+      minWidthContainer.forEach((el) => {
+        el.style = 'max-width: 800px'
+      })
     }
   }
 }

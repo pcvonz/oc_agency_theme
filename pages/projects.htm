@@ -10,7 +10,8 @@ id = "{{ :project_name }}"
 {% set amountOfItems = items|length %}
 
 <div class="center-padding slideIn-left">
-  <div class="relative hide-scrollbar min-height l-content-page border">
+  <div class="outer-border min-height-content-page">
+  <div class="relative hide-scrollbar min-height-content-page l-content-page border">
     <div id="scrollbar">
       <div id="back-button">
         <a href="/paul#{{ item.slug }}">
@@ -68,5 +69,6 @@ id = "{{ :project_name }}"
         {% endfor %}
       </div>
     </div>
+  </div>
   </div>
 </div>

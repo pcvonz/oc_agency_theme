@@ -1,7 +1,7 @@
 .load-container{
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background-color: $coolblack;
   z-index: 4000;
   display: none;
