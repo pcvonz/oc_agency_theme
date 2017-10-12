@@ -9,7 +9,6 @@ let docCookies = new Cookies()
 
 let path = anime.path('#path1466')
 let pathTwo = anime.path('#path2')
-console.log(path())
 
 let motionPath = anime({
   targets: '.follow',
@@ -33,7 +32,6 @@ let content = document.querySelectorAll('.content-wrapper > div')
 
 scrollList = new LinkedScrollList(content, 800)
 
-
 let minWidthContainer = document.querySelectorAll('.min-height')
 window.onload = function () {
   // initiate solar system 
@@ -42,10 +40,14 @@ window.onload = function () {
 
   playSplash()
   // Set scrolllist to current node
-  scrollList.setCurrentNode(window.location.hash)
+  scrollList.setCurrentNode(window.location.hash, () => {
+    if (!(typeof(CSS) !== 'function' || CSS.supports('scroll-behavior', 'smooth'))) {
+      document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
+    }
+  })
 }
 
-// Set overflow to hidden. On the off change
+// Set overflow to hidden. On the off chance
 // javascript isn't available, disable slideshow
 document.querySelector('.l-slider').style = 'overflow: hidden'
 
@@ -55,11 +57,7 @@ document.querySelector('.l-slider').style = 'overflow: hidden'
 function changeHash (ev) {
   if (window.location.hash && hashExists()) {
     scrollList.setCurrentNode(window.location.hash)
-    scrollList.currentNode.curr.scrollIntoView({
-      behavior: 'smooth'
-    })
-    document.querySelector('#current').id = ''
-    document.querySelector('a[href="' + window.location.hash + '"]').id = 'current'
+    updateProjectList()
     // Set the menu fill depending on background
     // Assumes that anything not home will have a dark background
     if (window.location.hash !== '#home') {
@@ -90,10 +88,16 @@ function hashExists () {
 }
 changeHash()
 window.addEventListener('hashchange', changeHash)
-console.log(scrollList)
+
+// Functions that run when hash changes
+function updateProjectList () {
+  let prevCurr = document.querySelector('#current')
+  let newCurr = document.querySelector(`a[href="${window.location.hash}"]`)
+  prevCurr.setAttribute('id', '')
+  newCurr.setAttribute('id', 'current')
+}
 
 // Set up smooth scroll between projects
-
 // Set scroll area to be l-slider
 let MOUSE_OVER = true
 let scrollAccum = 0
@@ -117,7 +121,6 @@ lSlider.addEventListener('wheel', function (e) {
 // Caution! Not all browsers track the same scroll distance
 function changeSlide (scroll) {
   (scroll > 0) ? scrollAccum += 1 : scrollAccum -= 1
-  console.log(scrollList.currentNode)
   if (scrollAccum > 2) {
     scrollList.nextNode()
     scrollAccum = 0
@@ -128,7 +131,6 @@ function changeSlide (scroll) {
 }
 
 document.addEventListener('keydown', (event) => {
-  console.log(event)
   if (event.keyCode === 40) { scrollList.nextNode() }
   if (event.keyCode === 38) { scrollList.prevNode() }
   if (event.keyCode === 39) {

@@ -8,10 +8,12 @@ import arrowLeft from './svg/arrow_down.svg'
 import envelopeClosed from './svg/envelope-closed.svg'
 import octocat from './svg/octocat.svg'
 import chevronLeft from './svg/chevron-left.svg'
-
 import doc from './svg/document.svg'
 import menu from './svg/menu.svg'
+
 import './style.scss'
+
+import './polyfills.js'
 import polyfill from 'smoothscroll-polyfill'
 
 // Add svg to dom 

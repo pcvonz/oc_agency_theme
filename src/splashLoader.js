@@ -48,7 +48,7 @@ export default function playSplash () {
           loadingFinished,
           loadingFinishedTime
         ).onfinish = () => {
-          loading.style = 'display: none'
+          loading.style.display = 'none'
         }
       }, 500)
     }

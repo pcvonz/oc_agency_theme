@@ -1,24 +1,7 @@
-input[id=nav]{
-  display: none;
-}
-input[id=nav]:checked ~ .project-list {
-  width: 100vw;
-  overflow: hidden;
-  @include breakpoint($tablet) {
-    position: relative;
-    width: 18em;
-  }
-}
-
-input[id=nav]:checked ~ label {
-  svg {
-    fill: white; 
-  }
-}
 label{
   cursor: pointer;
-  z-index: 100;
   svg {
+    z-index: 1;
     height: 24px;
     width: 24px;
     fill: white;
@@ -44,6 +27,23 @@ label{
     transition: fill .2s;
   }
 }
+input[id=nav]{
+  display: none;
+}
+input[id=nav]:checked ~ .project-list {
+  width: 100vw;
+  overflow: hidden;
+  @include breakpoint($tablet) {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+input[id=nav]:checked ~ label {
+  svg {
+    fill: white; 
+  }
+}
 .project-list {
   height: 100vh;
   position: fixed;
@@ -53,30 +53,27 @@ label{
   background-color: $coolblack;
   transition: width .2s;
   @include breakpoint($tablet) {
-    position: relative;
+    position: absolute;
+    right: -25px;
   }
   ul {
-    // Hide scroll bar
-    li {
-      a {
-        max-width: 70%;
-      }
-    }
     li:first-child {
       margin-top: 2em;
     }
     li:hover {
       background-color: $coolgray;
     }
-    width: 20em;
+    // Hide scroll bar
+    width: 100%;
     height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
     flex-direction: column;
     display: flex;
     justify-content: flex-start;
     list-style: none;
     padding: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
     a {
       padding: 1em;
     }
