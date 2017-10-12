@@ -80,15 +80,8 @@ profile = "designer"
               <div>
                 <h2> {{ item.title }} </h2>
                 {{ item.short_description |raw }}
-                <a class="arrow" href="/projects/{{ item.slug }}">
-                  <svg role="img">
-            <a class="arrow" href="/projects/{{ item.slug }}">
-              <svg role="img">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
-              </svg>
-            </a>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow_right"/>
-                  </svg>
+                <a class="link" href="/projects/{{ item.slug }}">
+                  View the full project
                 </a>
               </div>
             </div>

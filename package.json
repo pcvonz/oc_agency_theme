@@ -36,6 +36,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "breakpoint-sass": "^2.7.1",
+    "is-event-supported": "^1.0.1",
     "normalize.css": "^7.0.0",
     "smoothscroll-polyfill": "^0.4.0",
     "ssh2": "^0.5.5",

@@ -4,6 +4,7 @@ import LinkedScrollList from 'linked-scroll-jack'
 import './MenuAnim.js'
 import Cookies from './cookies.js'
 import anime from 'animejs'
+import normalizeWheel from './normalizeWheel.js'
 
 let docCookies = new Cookies()
 
@@ -40,11 +41,6 @@ window.onload = function () {
 
   playSplash()
   // Set scrolllist to current node
-  scrollList.setCurrentNode(window.location.hash, () => {
-    if (!(typeof(CSS) !== 'function' || CSS.supports('scroll-behavior', 'smooth'))) {
-      document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
-    }
-  })
 }
 
 // Set overflow to hidden. On the off chance
@@ -56,7 +52,9 @@ document.querySelector('.l-slider').style = 'overflow: hidden'
 // B: CSS Property 'scroll-behavior: smooth' is supported
 function changeHash (ev) {
   if (window.location.hash && hashExists()) {
-    scrollList.setCurrentNode(window.location.hash)
+    scrollList.setCurrentNode(window.location.hash, () => {
+      document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
+    })
     updateProjectList()
     // Set the menu fill depending on background
     // Assumes that anything not home will have a dark background
@@ -113,13 +111,14 @@ lSlider.addEventListener('mouseexit', (e) => {
 
 lSlider.addEventListener('wheel', function (e) {
   if (MOUSE_OVER) {
-    changeSlide(e.deltaY)
+    changeSlide(e)
   }
 })
 
 // Switch between sections based on scroll amount
 // Caution! Not all browsers track the same scroll distance
-function changeSlide (scroll) {
+function changeSlide (event) {
+  let scroll = normalizeWheel(event).spinY;
   (scroll > 0) ? scrollAccum += 1 : scrollAccum -= 1
   if (scrollAccum > 2) {
     scrollList.nextNode()

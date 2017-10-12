@@ -12,7 +12,6 @@ import doc from './svg/document.svg'
 import menu from './svg/menu.svg'
 
 import './style.scss'
-
 import './polyfills.js'
 import polyfill from 'smoothscroll-polyfill'
 
