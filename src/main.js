@@ -8,6 +8,8 @@ import arrowLeft from './svg/arrow_down.svg'
 import envelopeClosed from './svg/envelope-closed.svg'
 import octocat from './svg/octocat.svg'
 import chevronLeft from './svg/chevron-left.svg'
+import magnifyingGlass from './svg/magnifying-glass.svg'
+import circleX from './svg/circle-x.svg'
 import doc from './svg/document.svg'
 import menu from './svg/menu.svg'
 

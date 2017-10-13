@@ -1,0 +1,40 @@
+.lightbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  z-index: 100;
+  .lightbox-item {
+    position: relative;
+    width: 30%;
+    border: 8px solid $coolblack;
+    cursor: pointer;
+    transition: all .2s;
+    img {
+      width: 100%;
+    }
+    .lightbox-slide {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 0;
+      transition: all .2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 0;
+        fill: white;
+      }
+    }
+    &:hover{
+      .lightbox-slide {
+        width: 5em;
+        background-color: $coolblack;
+        svg {
+          width: 3em;
+        }
+      }
+    }
+  }
+}

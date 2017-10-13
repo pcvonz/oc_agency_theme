@@ -48,6 +48,7 @@ topAnim.pause()
 midAnim.pause()
 botAnim.pause()
 let menuClosed = true
+document.querySelector('#nav').checked = false
 document.querySelector('.menuanim svg').addEventListener('click', (ev) => {
   if (menuClosed) {
     topAnim.playbackRate = 1
@@ -62,5 +63,4 @@ document.querySelector('.menuanim svg').addEventListener('click', (ev) => {
   midAnim.play()
   botAnim.play()
   menuClosed = !menuClosed
-  console.log(menuClosed)
 })

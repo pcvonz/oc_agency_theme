@@ -61,11 +61,23 @@ id = "{{ :project_name }}"
         </div>
       </div>
       <div class="written-content">
+        {% if item.screenshot %}
+          <div class="lightbox">
+          {% for img in item.screenshot %}
+            <div class="lightbox-item">
+              <div class="lightbox-slide">
+               <svg><use xlink:href="#icon-magnifying-glass"></use></svg> 
+              </div>
+              <img src="{{ img.path }}"/>
+            </div>
+          {% endfor %}
+          </div>
+        {% endif %}
         {% for desc in itemPage.section %}
-        <div class="content-page-section">
-          <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
-            {{ desc.section|raw }}
-        </div>
+          <div class="content-page-section">
+            <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
+              {{ desc.section|raw }}
+          </div>
         {% endfor %}
       </div>
     </div>

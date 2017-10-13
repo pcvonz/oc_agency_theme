@@ -40,7 +40,9 @@ window.onload = function () {
   document.querySelector('.follow2').setAttribute('class', document.querySelector('.follow2').getAttribute('class') + ' full-opacity')
 
   playSplash()
-  // Set scrolllist to current node
+  if (window.location.hash) {
+    document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
+  }
 }
 
 // Set overflow to hidden. On the off chance
@@ -52,9 +54,6 @@ document.querySelector('.l-slider').style = 'overflow: hidden'
 // B: CSS Property 'scroll-behavior: smooth' is supported
 function changeHash (ev) {
   if (window.location.hash && hashExists()) {
-    scrollList.setCurrentNode(window.location.hash, () => {
-      document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
-    })
     updateProjectList()
     // Set the menu fill depending on background
     // Assumes that anything not home will have a dark background
