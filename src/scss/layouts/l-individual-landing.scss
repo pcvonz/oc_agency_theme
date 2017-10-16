@@ -1,6 +1,5 @@
 .center-padding {
   width: 100vw;
-  background-color: $coolblack;
 
   @include breakpoint($tablet) {
     height: 100vh;

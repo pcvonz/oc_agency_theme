@@ -76,3 +76,28 @@ ul.nav {
   margin: 0;
   padding: 0;
 }
+
+.background-primary {
+  background-color: $coolblack;
+}
+
+.background-secondary {
+  background-color: $orange;
+  padding: 0 .5em;
+}
+
+.color-primary {
+  color: $coolblack;
+}
+
+.color-secondary {
+  color: $orange;
+}
+
+.background-image-primary {
+  background-image: linear-gradient($coolblack,  5%, white, 5%, white, 90%, $coolblack,  90%, $coolblack);
+}
+
+.primary-border-five {
+  border: 5px solid $coolblack;
+}

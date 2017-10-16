@@ -5,11 +5,11 @@ label{
     height: 24px;
     width: 24px;
     fill: white;
-    background-color: $coolblack;
     padding: 0 5px 2px 5px;
     border-bottom: 5px solid $coolgray;
     height: 35px;
     width: 35px;
+    background-color: $coolblack;
     @include breakpoint($tablet) {
       padding: unset;
       border-bottom: unset;

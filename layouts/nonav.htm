@@ -11,11 +11,13 @@ description = "Default layout"
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="OctoberCMS">
         <link href="{{ [
-          'assets/style.css'
-      ]|theme }}" rel="stylesheet">
+          'assets/style.css',
+          'assets/theme/theme.less'
+      ]|theme }}
+      " rel="stylesheet">
         {% styles %}
     </head>
-    <body>
+    <body class="background-primary">
 
         <!-- Content -->
         <section id="layout-content">

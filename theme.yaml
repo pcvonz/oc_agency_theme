@@ -1,5 +1,24 @@
 name: Agency
-description: ''
+description: 'Portfolio website'
 author: Paul Von Zimmerman
-homepage: 'https://paul.von-zimmerman.com'
+homepage: 'https://von-zimmerman.com/paul'
 code: ''
+
+form: 
+  fields:
+    site_name:
+      label: Site name
+      comment: The website name as it should appear on the front-end
+      default: Portfolio
+    primay_color:
+      label: Primary color
+      type: colorpicker
+      assetVar: 'primary-color'
+    secondary-color:
+      label: Primary Tint
+      type: colorpicker
+      assetVar: 'secondary-color'
+    primay_tint:
+      label: Primary Tint
+      type: colorpicker
+      assetVar: 'primary-tint'

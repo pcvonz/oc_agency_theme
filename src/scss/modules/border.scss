@@ -1,4 +1,4 @@
-.border {
+.primary-border-ten {
   @include breakpoint($tablet) {
     border: 10px solid $coolblack;
 

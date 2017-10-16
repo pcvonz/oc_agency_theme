@@ -4,7 +4,6 @@
     position: relative;
     a {
       padding: .3em;
-      color: $coolblack;
       height: 100%;
       width: 100%;
       display: block;
@@ -17,7 +16,6 @@
       height: 100%;
       position: absolute;
       top: 0;
-      background-color: $coolblack;
     }
   &:hover {
     a {

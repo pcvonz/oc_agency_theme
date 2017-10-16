@@ -26,7 +26,7 @@ id = "{{ :project_name }}"
       </div>
     </div>
     <div class="scroll">
-      <div class="banner">
+      <div class="banner background-primary">
         <img src="{{ item.banner.path }}">
       </div>
       <div class="intro">
@@ -43,10 +43,10 @@ id = "{{ :project_name }}"
               <ul class="block-nav nav"> 
               {% for nav in itemPage.section %}
                 <li>
-                  <a href="#{{ str_snake(nav.section_title)}}">
+                  <a class="color-primary" href="#{{ str_snake(nav.section_title)}}">
                     {{ nav.section_title }}
                   </a>
-                  <div> </div>
+                  <div class="background-primary"> </div>
                 </li>
               {% endfor %}
               </ul>
@@ -64,7 +64,7 @@ id = "{{ :project_name }}"
         {% if item.screenshot %}
           <div class="lightbox">
           {% for img in item.screenshot %}
-            <div class="lightbox-item">
+            <div class="primary-border-five lightbox-item">
               <div class="lightbox-slide">
                <svg><use xlink:href="#icon-magnifying-glass"></use></svg> 
               </div>

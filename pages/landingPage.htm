@@ -54,18 +54,18 @@ profile = "designer"
 </div>
 
 
-<div class="center-padding l-individual-landing ">
+<div class="center-padding l-individual-landing background-primary">
 
   <div class="outer-border min-height ">
         {% partial "universe" %}
-    <div class="min-height wrapper border fadein">
+    <div class="min-height wrapper primary-border-ten fadein">
       <nav class="project-nav fadein"> 
         <p> 0/{{ amountOfItems }} </p>
-        <div class="nav-wrap">
-        <a id="current" href="#home" class="circle"> 
+        <div class="background-image-primary nav-wrap">
+        <a class="background-primary" id="current" href="#home" class="circle"> 
         </a>
         {% for item in items %}
-          <a href="#{{ item.slug }}" class="circle"> 
+          <a class="background-primary" href="#{{ item.slug }}" class="circle"> 
           </a>
         {% endfor %}
         </div>
@@ -85,7 +85,7 @@ profile = "designer"
                 </a>
               </div>
             </div>
-            <div class="bk-coolblack">
+            <div class="background-primary">
               <img src="{{ item.banner.path }}"></img>
             </div>
           </div>
