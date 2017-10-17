@@ -1,0 +1,5 @@
+.hide-overflow {
+  @include breakpoint($tablet) {
+    overflow: hidden;
+  }
+}

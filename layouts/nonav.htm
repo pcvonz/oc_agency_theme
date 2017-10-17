@@ -4,7 +4,7 @@ description = "Default layout"
 <html>
     <head>
         <meta charset="utf-8">
-        <title>October CMS - {{ this.page.title }}</title>
+        <title>{{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="OctoberCMS">
@@ -28,6 +28,6 @@ description = "Default layout"
         {% scripts %}
         <script src="{{ 'assets/libs/web-animations.min.js'|theme }}"></script>
         <script src="{{ 'assets/main.app.js'|theme }}"></script>
-        <script src="{{ 'assets/landing.app.js'|theme }}"></script>
+        {% placeholder pageScripts %}
     </body>
 </html>

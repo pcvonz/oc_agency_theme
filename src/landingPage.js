@@ -47,7 +47,7 @@ window.onload = function () {
 
 // Set overflow to hidden. On the off chance
 // javascript isn't available, disable slideshow
-document.querySelector('.l-slider').style = 'overflow: hidden'
+document.querySelector('.l-slider').setAttribute('class', document.querySelector('.l-slider').getAttribute('class') + ' hide-overflow')
 
 // Only called if
 // A: Sidebar menu is used
@@ -58,19 +58,19 @@ function changeHash (ev) {
     // Set the menu fill depending on background
     // Assumes that anything not home will have a dark background
     if (window.location.hash !== '#home') {
-      document.querySelector('label > svg').style.fill = 'white'
+      document.querySelector('label > svg').setAttribute('style', 'fill: white')
     } else {
-      document.querySelector('label > svg').style.fill = ''
+      document.querySelector('label > svg').setAttribute('style', 'fill: ')
     }
 
     // Change width based on hash
     if (window.location.hash !== '#home') {
       minWidthContainer.forEach((el) => {
-        el.style = 'max-width: 1200px'
+        el.setAttribute('style', 'max-width: 1200px')
       })
     } else {
       minWidthContainer.forEach((el) => {
-        el.style = 'max-width: 800px'
+        el.setAttribute('style', 'max-width: 800px')
       })
     }
   }

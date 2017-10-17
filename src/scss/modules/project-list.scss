@@ -47,6 +47,7 @@ input[id=nav]:checked ~ label {
 .project-list {
   height: 100vh;
   position: fixed;
+  top: 0;
   width: 0;
   overflow: hidden;
   color: white;

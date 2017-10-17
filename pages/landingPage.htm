@@ -13,6 +13,10 @@ limit = 5
 [socialNav]
 profile = "designer"
 ==
+{% put pageScripts %}
+  <script src="{{ 'assets/landing.app.js'|theme }}"></script>
+{% endput %}
+
 {% set item = landingPage.items %}
 {% set amountOfItems = items|length %}
 

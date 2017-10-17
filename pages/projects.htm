@@ -1,6 +1,6 @@
 title = "projects"
 url = "/projects/:project_name?"
-layout = "project"
+layout = "nonav"
 is_hidden = 0
 
 [itemPage]
@@ -8,6 +8,11 @@ id = "{{ :project_name }}"
 ==
 {% set item = itemPage.item %}
 {% set amountOfItems = items|length %}
+
+{% put pageScripts %}
+<script src="{{ 'assets/project.app.js'|theme }}"></script>
+{% endput %}
+
 
 <div class="center-padding slideIn-left">
   <div class="outer-border min-height-content-page">
