@@ -22,3 +22,6 @@ form:
       label: Primary Tint
       type: colorpicker
       assetVar: 'primary-tint'
+
+require:
+  - Vonzimmerman.DisplayCase
