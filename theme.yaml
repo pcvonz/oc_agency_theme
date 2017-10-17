@@ -15,7 +15,7 @@ form:
       type: colorpicker
       assetVar: 'primary-color'
     secondary-color:
-      label: Primary Tint
+      label: Secondary color
       type: colorpicker
       assetVar: 'secondary-color'
     primay_tint:

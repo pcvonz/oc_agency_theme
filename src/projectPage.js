@@ -58,8 +58,8 @@ function enlargeSelf (el) {
         left: 0;
         top: 0;
         height: 100%;
-        background-color: #040b25cc;
     `
+    el.parentNode.className = `lightbox background-primary-transparent`
   } else {
     lightBoxContent.forEach((lb) => {
       lb.style.display = ''
@@ -67,5 +67,6 @@ function enlargeSelf (el) {
     el.style = ``
     el.querySelector('svg').innerHTML = '<use xlink:href="#icon-magnifying-glass"></use>'
     el.parentNode.style = ``
+    el.parentNode.className = 'lightbox'
   }
 }

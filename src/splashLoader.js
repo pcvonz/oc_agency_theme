@@ -34,7 +34,7 @@ let loadingFinishedTime = {
 }
 let loading = document.querySelector('.load-container')
 if (window.location.hash === '') {
-  loading.style = 'display: flex;'
+  loading.setAttribute('style', 'display: flex')
 }
 export default function playSplash () {
   let svg = document.querySelector('#loader svg')
