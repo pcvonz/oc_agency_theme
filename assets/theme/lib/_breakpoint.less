@@ -1,0 +1,14 @@
+.breakpoint(@media, @type, @rules: '') {
+    @processMedia: ~`((function(){'use strict';var args='@{media}',parRegExp=/\(([^)]+)\)/g,parts=[],matches=[],result='',isNumber=function(string){return string.replace(/\D/g, '').length>0;},createRule=function(rule){return '('+rule[0]+': '+rule[1]+')';},doPart=function(part){if(part.indexOf(' ')!==-1){parts=part.split(' ');if(isNumber(parts[0])&&isNumber(parts[1])){parts.forEach(function(el,i){result=result+(i>0?' and ':'')+createRule([(i>0?'min-height':'min-width'),el]);});return result;}return createRule(parts);}else{return createRule(['min-width',part]);}};if(args.charAt(0)==='"'&&args.charAt(args.length-1)==='"'){args=args.substr(1,args.length-2);}if(args.indexOf('(')!==-1){while ((matches=parRegExp.exec(args))!==null){parts.push(matches[1]);}parts.forEach(function(el,i){result+=(i>0?' and ':'')+doPart(el);});return result;}result+=doPart(args);return result;}()))`;
+    & when (isstring(@type)) {
+        @processType: ~`((function(){'use strict';var args='@{type}',typeRegExp=/^(all|screen|print|speech)/;if(args.charAt(0)==='"'&&args.charAt(args.length-1)==='"'){args=args.substr(1,args.length-2);}if(typeRegExp.exec(args)!==null){args='only '+args;}return args;}()))`;
+        @media @processType and @processMedia {
+            @rules();
+        }
+    }
+    & when (isruleset(@type)) {
+        @media only screen and @processMedia {
+            @type();
+        }
+    }
+}

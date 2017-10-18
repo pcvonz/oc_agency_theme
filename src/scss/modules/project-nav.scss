@@ -1,5 +1,6 @@
 .project-nav {
-   margin-left: 10px;
+  z-index: 1;
+  margin-left: 10px;
   display: none;
   @include breakpoint($tablet) {
     height: 100%;

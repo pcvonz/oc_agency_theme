@@ -1,5 +1,7 @@
 .l-slider {
   height: 105%;
+  min-width: 105%;
+  margin-left: -5%;
   overflow: scroll;
   scroll-behavior: smooth;
   .content-wrapper {

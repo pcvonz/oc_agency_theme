@@ -4,9 +4,8 @@ import LinkedScrollList from 'linked-scroll-jack'
 import './MenuAnim.js'
 import Cookies from './cookies.js'
 import anime from 'animejs'
-import normalizeWheel from './normalizeWheel.js'
 
-let docCookies = new Cookies()
+let windowHash = window.location.hash.replace('_', '')
 
 let path = anime.path('#path1466')
 let pathTwo = anime.path('#path2')
@@ -19,6 +18,7 @@ let motionPath = anime({
   duration: 50000,
   loop: true
 })
+
 let motionPathTwo = anime({
   targets: '.follow2',
   translateX: pathTwo('x'), // Follow the x values from the path `Object`
@@ -40,31 +40,24 @@ window.onload = function () {
   document.querySelector('.follow2').setAttribute('class', document.querySelector('.follow2').getAttribute('class') + ' full-opacity')
 
   playSplash()
-  if (window.location.hash) {
-    document.querySelector('.l-slider').scrollTop = document.querySelector(window.location.hash).offsetTop
+  if (window.location.hash !== '') {
+    windowHash = window.location.hash.replace('_', '')
+    document.querySelector('.l-slider').scrollTop = document.querySelector(windowHash).offsetTop
   }
 }
-
-// Set overflow to hidden. On the off chance
-// javascript isn't available, disable slideshow
-document.querySelector('.l-slider').setAttribute('class', document.querySelector('.l-slider').getAttribute('class') + ' hide-overflow')
 
 // Only called if
 // A: Sidebar menu is used
 // B: CSS Property 'scroll-behavior: smooth' is supported
 function changeHash (ev) {
   if (window.location.hash && hashExists()) {
+    windowHash = window.location.hash.replace('_', '')
     updateProjectList()
     // Set the menu fill depending on background
     // Assumes that anything not home will have a dark background
-    if (window.location.hash !== '#home') {
-      document.querySelector('label > svg').setAttribute('style', 'fill: white')
-    } else {
-      document.querySelector('label > svg').setAttribute('style', 'fill: ')
-    }
 
     // Change width based on hash
-    if (window.location.hash !== '#home') {
+    if (windowHash !== '#home') {
       minWidthContainer.forEach((el) => {
         el.setAttribute('style', 'max-width: 1200px')
       })
@@ -77,7 +70,7 @@ function changeHash (ev) {
 }
 
 function hashExists () {
-  if (document.querySelector('a[href="' + window.location.hash + '"]') === null) {
+  if (document.querySelector('a[href="' + windowHash + '"]') === null) {
     return false
   } else {
     return true
@@ -89,7 +82,7 @@ window.addEventListener('hashchange', changeHash)
 // Functions that run when hash changes
 function updateProjectList () {
   let prevCurr = document.querySelector('#current')
-  let newCurr = document.querySelector(`a[href="${window.location.hash}"]`)
+  let newCurr = document.querySelector(`a[href="${windowHash}"]`)
   prevCurr.setAttribute('id', '')
   newCurr.setAttribute('id', 'current')
 }
@@ -108,24 +101,32 @@ lSlider.addEventListener('mouseexit', (e) => {
   MOUSE_OVER = false
 })
 
-lSlider.addEventListener('wheel', function (e) {
+lSlider.addEventListener('scroll', function (e) {
   if (MOUSE_OVER) {
     changeSlide(e)
   }
 })
 
-// Switch between sections based on scroll amount
-// Caution! Not all browsers track the same scroll distance
+let deltaY = 0
 function changeSlide (event) {
-  let scroll = normalizeWheel(event).spinY;
-  (scroll > 0) ? scrollAccum += 1 : scrollAccum -= 1
-  if (scrollAccum > 2) {
-    scrollList.nextNode()
-    scrollAccum = 0
-  } else if (scrollAccum < -2) {
-    scrollList.prevNode()
-    scrollAccum = 0
+  let lSlider = document.querySelector('.l-slider')
+  deltaY = deltaY - lSlider.scrollTop
+  if (lSlider.scrollTop > lSlider.offsetHeight) {
+    document.querySelector('label > svg').setAttribute('style', 'fill: white')
+  } else {
+    document.querySelector('label > svg').setAttribute('style', 'fill: ')
   }
+  if (deltaY < 0) {
+    if (scrollList.currentNode.next !== undefined && lSlider.scrollTop >= scrollList.currentNode.next.curr.offsetTop) {
+      scrollList.nextNode()
+    }
+  }
+  if (deltaY > 0) {
+    if (scrollList.currentNode.prev !== undefined && lSlider.scrollTop <= scrollList.currentNode.prev.curr.offsetTop) {
+      scrollList.prevNode()
+    }
+  }
+  deltaY = lSlider.scrollTop
 }
 
 document.addEventListener('keydown', (event) => {

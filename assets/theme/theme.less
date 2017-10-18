@@ -1,0 +1,195 @@
+@primary-color: #040b25;
+@primary-tint: #434767;
+@coollightgray: #a0a6bc;
+@offwhite: #eeeaea;
+@secondary-color: #ff953e;
+
+@desktop: 1200px;
+@tablet: 800px;
+
+.lightbox {
+  .lightbox-item {
+    &:hover{
+      .lightbox-slide {
+        background-color: @primary-color;
+      }
+    }
+  }
+}
+
+.left-border:before {
+  background-color: @primary-color;
+}
+
+// scroll-bar theme
+#scrollbar {
+  .scroll-container {
+    border: 2px solid @primary-color;
+    .inner-scroll {
+      background-color: @secondary-color;
+    }
+  }
+}
+
+
+//project-list theme
+
+label{
+  svg {
+    border-bottom: 5px solid @primary-tint;
+  }
+}
+@media (min-width: @tablet) {
+  label {
+    svg {
+      border-bottom: none;
+      fill: @primary-color;
+    }
+  }
+  nav.social-nav {
+    .icon-link{
+      background-color: white;
+      svg {
+        fill: @primary-color;
+      }
+    }
+    .icon-link:hover {
+      background-color: @primary-color;
+    }
+  }
+}
+
+
+.project-list {
+  background-color: @primary-color;
+  ul {
+    li:hover {
+      background-color: @primary-tint;
+    }
+    #selected {
+      background-color: @secondary-color;
+    }
+  }
+}
+
+// social-nav theme
+
+@border-width: 3px;
+.icon-link:nth-child(1) {
+  border: @border-width solid @primary-color;
+}
+.icon-link:last-child {
+  border: @border-width solid @primary-color;
+}
+.icon-link {
+  border-left: @border-width solid @primary-color;
+  border-right: @border-width solid @primary-color;
+  svg {
+    fill: @primary-color;
+  }
+}
+
+.icon-link{
+  background-color: @primary-color;
+}
+
+
+//back-button theme
+
+#back-button {
+  a {
+    svg {
+      stroke: @primary-color;
+    }
+    &:hover {
+      svg {
+        fill: @primary-color;
+      }
+    }
+  }
+}
+
+//Arrow theme
+a.arrow {
+  svg[role=img] {
+    background-color: @primary-tint;
+    fill: @offwhite;
+  }
+  &:hover {
+    svg[role=img] {
+      fill: @primary-color;
+      background-color: @coollightgray;
+    }
+  }
+}
+
+//loader-theme
+.load-container{
+  background-color: @primary-color;
+}
+
+
+//global
+
+.background-primary {
+  background-color: @primary-color;
+}
+.background-primary-transparent {
+  background-color: fade(@primary-color, 80%);
+}
+
+.background-secondary {
+  background-color: @secondary-color;
+  padding: 0 .5em;
+}
+
+.color-primary {
+  color: @primary-color;
+}
+
+.color-secondary {
+  color: @secondary-color;
+}
+
+.background-image-primary {
+  background-image: linear-gradient(@primary-color,  5%, white, 5%, white, 90%, @primary-color,  90%, @primary-color);
+}
+
+.primary-border-five {
+  border: 5px solid @primary-color;
+}
+
+// global links
+
+.written-content, .description {
+  a { 
+    color: @primary-tint;
+  }
+  a:before {
+    color: @primary-tint;
+  }
+  a:hover:before {
+    color: @primary-color;
+  }
+}
+
+.link {
+  color: @primary-tint;
+  &:before {
+    color: @primary-tint;
+  }
+  &:hover:before {
+    color: @primary-color;
+  }
+}
+
+.primary-border-ten {
+  border: 10px solid @primary-color;
+}
+.primary-border-five {
+  border: 5px solid @primary-color;
+}
+
+.project-nav .nav-wrap a#current {
+  background-color: @secondary-color;
+}
