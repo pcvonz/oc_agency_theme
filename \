@@ -44,8 +44,8 @@ window.onload = function () {
     windowHash = window.location.hash.replace('_', '')
     document.querySelector('.l-slider').scrollTop = document.querySelector(windowHash).offsetTop
   } else {
-    windowHash = 'home'
-    window.location.hash = 'home'
+    window.location.hash = 'home_'
+    changeHash()
   }
 }
 
