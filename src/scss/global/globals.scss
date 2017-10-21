@@ -1,3 +1,4 @@
+ @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond|Fira+Sans');
 .u-visually-hidden {
   display: none;
 }
@@ -14,7 +15,7 @@
 }
 
 // Typography
-$serif: "Theano Didot", serif;
+$serif: "Cormorant Garamond", serif;
 $sans-serif: "Fira Sans", sans-serif;
 h1 {
   font-family: $serif;
@@ -100,4 +101,7 @@ ul.nav {
 
 .primary-border-five {
   border: 5px solid $coolblack;
+}
+.color-white {
+  color: white;
 }

@@ -3,6 +3,7 @@ description: 'Portfolio website'
 author: Paul Von Zimmerman
 homepage: 'https://von-zimmerman.com/paul'
 code: ''
+icon: './assets/agency_logo.png'
 
 form: 
   fields:

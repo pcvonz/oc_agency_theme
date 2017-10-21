@@ -1,14 +1,19 @@
 $border-width: 3px;
 .icon-link:nth-child(1) {
   border: $border-width solid $coolblack;
+  border-bottom: #{$border-width/2} solid $coolblack;
 }
 .icon-link:last-child {
   border: $border-width solid $coolblack;
+  border-top: #{$border-width/2} solid $coolblack;
 }
 .icon-link {
   text-decoration: none;
   border-left: $border-width solid $coolblack;
   border-right: $border-width solid $coolblack;
+  border-top: #{$border-width/2} solid $coolblack;
+  border-bottom: #{$border-width/2} solid $coolblack;
+
   background-color: white;
   height: 32px;
   width: 32px;

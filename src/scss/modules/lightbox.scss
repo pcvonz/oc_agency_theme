@@ -1,10 +1,14 @@
 .lightbox {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  background: unset;
+  transition: background .2s;
+  flex-wrap: wrap;
   z-index: 100;
   .lightbox-item {
+    margin-top: 1em;
     position: relative;
     width: 30%;
     cursor: pointer;
@@ -13,6 +17,7 @@
       width: 100%;
     }
     .lightbox-slide {
+      max-width: 4em;
       position: absolute;
       left: 0;
       height: 100%;
@@ -28,10 +33,11 @@
     }
     &:hover{
       .lightbox-slide {
-        width: 5em;
+        width: 80%;
         background-color: $coolblack;
         svg {
-          width: 3em;
+          width: 80%;
+          max-width: 3em;
         }
       }
     }

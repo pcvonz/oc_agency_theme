@@ -4,7 +4,7 @@ layout = "nonav"
 is_hidden = 0
 
 [itemPage]
-id = "{{ :project_name }}"
+project = "{{ :project_name }}"
 ==
 {% set item = itemPage.item %}
 {% set amountOfItems = items|length %}
@@ -14,36 +14,36 @@ id = "{{ :project_name }}"
 {% endput %}
 
 
-<div class="center-padding slideIn-left">
+<div class="center-padding ">
   <div class="outer-border min-height-content-page">
   <div class="relative hide-scrollbar min-height-content-page l-content-page primary-border-ten">
     <div id="scrollbar">
       <div id="back-button">
-        <a href="/#{{ item.slug }}">
-          <svg role="img">
+        <a href="/#{{ item.slug }} ">
+          <svg class="slideIn-left" role="img">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"/>
           </svg>
         </a>
       </div>
-      <div class="scroll-container">
+      <div class="scroll-container slideIn-left">
         <div class="inner-scroll">
         </div>
       </div>
     </div>
     <div class="scroll">
-      <div class="banner background-primary">
+      <div class="banner background-primary slideIn-left">
         <img src="{{ item.banner.path }}">
       </div>
-      <div class="intro">
+      <div class="intro slideIn-left">
         <div class="full-width">
           <h1> {{ item.title }} </h1>
         </div>
-        <div class="flex-row">
+        <div class="flex-row slideIn-left">
           <div class="">
             <h3> Year </h3>
             <p>{{ item.item_date|date('Y') }}</p>
           </div>
-          <div class="index">
+          <div class="index slideIn-left">
             <h3> Index </h3>
               <ul class="block-nav nav"> 
               {% for nav in itemPage.section %}
@@ -56,7 +56,7 @@ id = "{{ :project_name }}"
               {% endfor %}
               </ul>
           </div>
-          <div class="description flex-grow">
+          <div class="description flex-grow slideIn-left">
             <h3> Short Description </h3>
               {{ item.short_description|raw }}
               {% if (item.item_link) %}
@@ -67,19 +67,21 @@ id = "{{ :project_name }}"
       </div>
       <div class="written-content">
         {% if item.screenshot %}
-          <div class="lightbox">
-          {% for img in item.screenshot %}
-            <div class="primary-border-five lightbox-item">
-              <div class="lightbox-slide">
-               <svg><use xlink:href="#icon-magnifying-glass"></use></svg> 
+        <div class="lightbox-container">
+            <div class="lightbox">
+            {% for img in item.screenshot %}
+              <div class="primary-border-five lightbox-item">
+                <div class="lightbox-slide slideIn-left">
+                 <svg><use xlink:href="#icon-magnifying-glass"></use></svg> 
+                </div>
+                <img src="{{ img.path }}"/>
               </div>
-              <img src="{{ img.path }}"/>
+            {% endfor %}
             </div>
-          {% endfor %}
-          </div>
+        </div>
         {% endif %}
         {% for desc in itemPage.section %}
-          <div class="content-page-section">
+          <div class="content-page-section slideIn-left">
             <h2 id="{{ str_snake(desc.section_title) }}">{{ desc.section_title }}</h2>
               {{ desc.section|raw }}
           </div>

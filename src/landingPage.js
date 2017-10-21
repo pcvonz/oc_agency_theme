@@ -1,5 +1,5 @@
 // Code for the landing page
-import playSplash from './splashLoader.js'
+// import playSplash from './splashLoader.js'
 import LinkedScrollList from 'linked-scroll-jack'
 import './MenuAnim.js'
 import Cookies from './cookies.js'
@@ -39,10 +39,12 @@ window.onload = function () {
   document.querySelector('.follow').setAttribute('class', document.querySelector('.follow').getAttribute('class') + ' full-opacity')
   document.querySelector('.follow2').setAttribute('class', document.querySelector('.follow2').getAttribute('class') + ' full-opacity')
 
-  playSplash()
+  // playSplash()
   if (window.location.hash !== '') {
     windowHash = window.location.hash.replace('_', '')
     document.querySelector('.l-slider').scrollTop = document.querySelector(windowHash).offsetTop
+  } else {
+    window.location.hash = 'home'
   }
 }
 
@@ -128,11 +130,3 @@ function changeSlide (event) {
   }
   deltaY = lSlider.scrollTop
 }
-
-document.addEventListener('keydown', (event) => {
-  if (event.keyCode === 40) { scrollList.nextNode() }
-  if (event.keyCode === 38) { scrollList.prevNode() }
-  if (event.keyCode === 39) {
-    scrollList.currentNode.curr.querySelector('a').click()
-  }
-})

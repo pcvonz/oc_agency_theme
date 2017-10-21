@@ -1,16 +1,16 @@
-title = "Von Zimmerman"
+title = "My Landing Page"
 url = "/"
 layout = "nonav"
 is_hidden = 0
 
 [Profile]
-profile = "my-occupation"
+profile = "my-key"
 
 [landingPage]
 tag = "tag"
 
 [socialNav]
-profile = "my-occupation"
+profile = "my-key"
 ==
 {% put pageScripts %}
   <script src="{{ 'assets/landing.app.js'|theme }}"></script>
@@ -76,7 +76,7 @@ profile = "my-occupation"
       </nav>
       <div class="l-slider">
         <div class="content-wrapper">
-          {% component 'Profile' %}
+        {% component 'Profile' %}
         {% for item in items %}
           <div id="{{ item.slug }}" class="l-content">
             <div>
