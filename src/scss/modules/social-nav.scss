@@ -19,7 +19,7 @@ $border-width: 3px;
   width: 32px;
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
   transition: width .2s, background-color .2s;

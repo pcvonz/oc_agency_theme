@@ -1,32 +1,10 @@
 // Code for the landing page
 // import playSplash from './splashLoader.js'
-import LinkedScrollList from 'linked-scroll-jack'
+import LinkedScrollList from './LinkedScrollList.js'
 import './MenuAnim.js'
-import Cookies from './cookies.js'
-import anime from 'animejs'
+import './universe.js'
 
 let windowHash = window.location.hash.replace('_', '')
-
-let path = anime.path('#path1466')
-let pathTwo = anime.path('#path2')
-
-let motionPath = anime({
-  targets: '.follow',
-  translateX: path('x'), // Follow the x values from the path `Object`
-  translateY: path('y'), // Follow the y values from the path `Object`
-  easing: 'linear',
-  duration: 50000,
-  loop: true
-})
-
-let motionPathTwo = anime({
-  targets: '.follow2',
-  translateX: pathTwo('x'), // Follow the x values from the path `Object`
-  translateY: pathTwo('y'), // Follow the y values from the path `Object`
-  easing: 'linear',
-  duration: 80000,
-  loop: true
-})
 
 let scrollList
 let content = document.querySelectorAll('.content-wrapper > div')
@@ -44,7 +22,7 @@ window.onload = function () {
     windowHash = window.location.hash.replace('_', '')
     document.querySelector('.l-slider').scrollTop = document.querySelector(windowHash).offsetTop
   } else {
-    windowHash = 'home'
+    windowHash = '#home'
     window.location.hash = 'home'
   }
 }
