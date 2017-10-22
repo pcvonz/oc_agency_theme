@@ -9,12 +9,18 @@
   z-index: 100;
   .lightbox-item {
     margin-top: 1em;
+    height: 15em;
+    overflow: hidden;
     position: relative;
     width: 30%;
     cursor: pointer;
     transition: all .2s;
+    display: flex;
+    justify-content: center;
     img {
-      width: 100%;
+      height: 100%;
+      max-height: 80vh;
+      max-width: 80vw;
     }
     .lightbox-slide {
       max-width: 4em;
