@@ -15,14 +15,17 @@ form:
       label: Primary color
       type: colorpicker
       assetVar: 'primary-color'
+      default: '#1A1A1A'
     secondary-color:
       label: Secondary color
       type: colorpicker
       assetVar: 'secondary-color'
+      default: '#ff5100'
     primay_tint:
       label: Primary Tint
       type: colorpicker
       assetVar: 'primary-tint'
+      default: '#76888d'
 
 require:
   - Vonzimmerman.DisplayCase

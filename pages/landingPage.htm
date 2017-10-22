@@ -12,10 +12,6 @@ tag = "tag"
 [socialNav]
 profile = "my-key"
 ==
-function onStart() {
-  Session::put('previous', $this->page->url);
-}
-==
 {% put pageScripts %}
   <script src="{{ 'assets/landing.app.js'|theme }}"></script>
 {% endput %}
@@ -87,7 +83,7 @@ function onStart() {
               <div>
                 <h2> {{ item.title }} </h2>
                 {{ item.short_description |raw }}
-                <a class="link" href="/projects/{{ item.slug }}">
+                <a class="link" href="/projects/{{ item.slug }}/{{ this.page.url }}">
                   View the full project
                 </a>
               </div>

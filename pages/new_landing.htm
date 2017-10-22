@@ -87,7 +87,7 @@ function onStart() {
               <div>
                 <h2> {{ item.title }} </h2>
                 {{ item.short_description |raw }}
-                <a class="link" href="/projects/{{ item.slug }}">
+                <a class="link" href="/projects/{{ item.slug }}{{ this.page.url }}">
                   View the full project
                 </a>
               </div>

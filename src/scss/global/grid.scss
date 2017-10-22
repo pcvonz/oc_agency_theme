@@ -4,5 +4,7 @@
   justify-content: space-between;
 }
 .flex-grow {
-  width: 30%;
+  @include breakpoint($tablet) {
+    width: 30%;
+  }
 }

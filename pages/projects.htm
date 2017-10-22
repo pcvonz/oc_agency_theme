@@ -1,15 +1,10 @@
 title = "projects"
-url = "/projects/:project_name?"
+url = "/projects/:project_name?/:landing_page?"
 layout = "nonav"
 is_hidden = 0
 
 [itemPage]
 project = "{{ :project_name }}"
-==
-function onStart() {
-  echo(Session::get('previous'));
-  $this['previous'] = Session::get('previous');
-}
 ==
 {% set item = itemPage.item %}
 {% set amountOfItems = items|length %}
@@ -24,7 +19,11 @@ function onStart() {
   <div class="relative hide-scrollbar min-height-content-page l-content-page primary-border-ten">
     <div id="scrollbar">
       <div id="back-button">
-        <a href="{{ previous }}#{{ item.slug }} ">
+        {% if landing_page %}
+          <a href="/{{ landing_page }}#{{ item.slug }} ">
+        {% else %}
+          <a href="/#{{ item.slug }} ">
+        {% endif %} 
           <svg class="slideIn-left" role="img">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"/>
           </svg>

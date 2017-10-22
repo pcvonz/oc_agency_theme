@@ -1,8 +1,8 @@
 @primary-color: #040b25;
+@secondary-color: #ff953e;
 @primary-tint: #434767;
 @coollightgray: #a0a6bc;
 @offwhite: #eeeaea;
-@secondary-color: #ff953e;
 
 @desktop: 1200px;
 @tablet: 800px;
@@ -31,12 +31,11 @@
   }
 }
 
-
 //project-list theme
-
 label{
   svg {
     border-bottom: 5px solid @primary-tint;
+    background-color: @primary-color;
   }
 }
 @media (min-width: @tablet) {
@@ -44,6 +43,7 @@ label{
     svg {
       border-bottom: none;
       fill: @primary-color;
+      background-color: unset;
     }
   }
   nav.social-nav {
