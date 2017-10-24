@@ -3,9 +3,13 @@ url = "/projects/:project_name?/:landing_page?"
 layout = "nonav"
 is_hidden = 0
 
+[landingPage]
+tag = "tag"
+
 [itemPage]
 project = "{{ :project_name }}"
 ==
+{% set items = landingPage.items %}
 {% set item = itemPage.item %}
 {% set amountOfItems = items|length %}
 
@@ -92,6 +96,7 @@ project = "{{ :project_name }}"
         {% endfor %}
       </div>
     </div>
+    {% partial "menu" %}
   </div>
   </div>
 </div>

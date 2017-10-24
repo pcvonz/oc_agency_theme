@@ -60,11 +60,82 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
+/* 0 */
+/***/ (function(module, exports) {
+
+let barTime = {
+  duration: 150,
+  fill: 'forwards',
+  iterations: 1
+}
+let topBar = [
+  {
+    transform: 'translatey(0) translatex(0) rotate(0)'
+  },
+  {
+    transform: 'translatey(1.5px) translatex(1px) rotate(45deg)'
+  }
+]
+
+let midBar = [
+  {
+    transform: 'translatey(0) translatex(0) rotate(0)'
+  },
+  {
+    transform: 'translatey(5px) translatex(-1.7px) rotate(-45deg)'
+  }
+]
+let botBar = [
+  {
+    transform: 'translatey(0)'
+  },
+  {
+    transform: 'translatey(10px)'
+  }
+]
+
+let top = document.querySelector('svg #path1989')
+let mid = document.querySelector('svg #path1987')
+let bot = document.querySelector('svg #path1975')
+let topAnim = top.animate(
+  topBar,
+  barTime
+)
+let midAnim = mid.animate(
+  midBar,
+  barTime
+)
+let botAnim = bot.animate(
+  botBar,
+  barTime
+)
+topAnim.pause()
+midAnim.pause()
+botAnim.pause()
+let menuClosed = true
+document.querySelector('#nav').checked = false
+document.querySelector('.menuanim svg').addEventListener('click', (ev) => {
+  if (menuClosed) {
+    topAnim.playbackRate = 1
+    midAnim.playbackRate = 1
+    botAnim.playbackRate = 1
+  } else {
+    topAnim.playbackRate = -1
+    midAnim.playbackRate = -1
+    botAnim.playbackRate = -1
+  }
+  topAnim.play()
+  midAnim.play()
+  botAnim.play()
+  menuClosed = !menuClosed
+})
+
+
+/***/ }),
 /* 1 */,
 /* 2 */,
 /* 3 */,
@@ -77,13 +148,14 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LinkedScrollList_js__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuAnim_js__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LinkedScrollList_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuAnim_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuAnim_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__MenuAnim_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__universe_js__ = __webpack_require__(17);
 // Code for the landing page
@@ -158,22 +230,10 @@ function updateProjectList () {
 
 // Set up smooth scroll between projects
 // Set scroll area to be l-slider
-let MOUSE_OVER = true
-let scrollAccum = 0
 
 let lSlider = document.querySelector('.l-slider')
-lSlider.addEventListener('mouseenter', (e) => {
-  MOUSE_OVER = true
-})
-
-lSlider.addEventListener('mouseexit', (e) => {
-  MOUSE_OVER = false
-})
-
 lSlider.addEventListener('scroll', function (e) {
-  if (MOUSE_OVER) {
-    changeSlide(e)
-  }
+  changeSlide(e)
 })
 
 let deltaY = 0
@@ -200,11 +260,11 @@ function changeSlide (event) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollObject__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollObject__ = __webpack_require__(16);
 // Class that takes in a list of of HTML nodes and
 // and 'shifts' between them. Pretty generic, but
 // can be used to implement simple 'scroll-jack'-like behavior.
@@ -297,7 +357,7 @@ class LinkedScrollList {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -330,78 +390,6 @@ class ScrollObject {
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ScrollObject;
 
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-let barTime = {
-  duration: 150,
-  fill: 'forwards',
-  iterations: 1
-}
-let topBar = [
-  {
-    transform: 'translatey(0) translatex(0) rotate(0)'
-  },
-  {
-    transform: 'translatey(1.5px) translatex(1px) rotate(45deg)'
-  }
-]
-
-let midBar = [
-  {
-    transform: 'translatey(0) translatex(0) rotate(0)'
-  },
-  {
-    transform: 'translatey(5px) translatex(-1.7px) rotate(-45deg)'
-  }
-]
-let botBar = [
-  {
-    transform: 'translatey(0)'
-  },
-  {
-    transform: 'translatey(10px)'
-  }
-]
-
-let top = document.querySelector('svg #path1989')
-let mid = document.querySelector('svg #path1987')
-let bot = document.querySelector('svg #path1975')
-let topAnim = top.animate(
-  topBar,
-  barTime
-)
-let midAnim = mid.animate(
-  midBar,
-  barTime
-)
-let botAnim = bot.animate(
-  botBar,
-  barTime
-)
-topAnim.pause()
-midAnim.pause()
-botAnim.pause()
-let menuClosed = true
-document.querySelector('#nav').checked = false
-document.querySelector('.menuanim svg').addEventListener('click', (ev) => {
-  if (menuClosed) {
-    topAnim.playbackRate = 1
-    midAnim.playbackRate = 1
-    botAnim.playbackRate = 1
-  } else {
-    topAnim.playbackRate = -1
-    midAnim.playbackRate = -1
-    botAnim.playbackRate = -1
-  }
-  topAnim.play()
-  midAnim.play()
-  botAnim.play()
-  menuClosed = !menuClosed
-})
 
 
 /***/ }),

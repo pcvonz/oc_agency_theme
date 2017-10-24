@@ -70,22 +70,10 @@ function updateProjectList () {
 
 // Set up smooth scroll between projects
 // Set scroll area to be l-slider
-let MOUSE_OVER = true
-let scrollAccum = 0
 
 let lSlider = document.querySelector('.l-slider')
-lSlider.addEventListener('mouseenter', (e) => {
-  MOUSE_OVER = true
-})
-
-lSlider.addEventListener('mouseexit', (e) => {
-  MOUSE_OVER = false
-})
-
 lSlider.addEventListener('scroll', function (e) {
-  if (MOUSE_OVER) {
-    changeSlide(e)
-  }
+  changeSlide(e)
 })
 
 let deltaY = 0

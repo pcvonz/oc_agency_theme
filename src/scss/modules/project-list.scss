@@ -68,6 +68,7 @@ input[id=nav]:checked ~ label {
     width: 100%;
     height: 90%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
 
     flex-direction: column;

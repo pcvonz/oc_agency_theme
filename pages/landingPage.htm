@@ -95,8 +95,11 @@ profile = "my-key"
         {% endfor %}
         </div>
       </div>
-  
+      {% partial 'menu' %}
       {% component 'socialNav' %}
+    </div>
+  </div>
+</div
     <input type="checkbox" id="nav"> </input>
     <label class="menuanim" for="nav">
       <svg 
@@ -133,13 +136,11 @@ profile = "my-key"
            d="m 0,5.97 v 1 h 8 v -1 z" />
       </svg>
     </label>
-    <nav class="project-list"> 
+      <nav class="project-list"> 
         <ul>
           {% for item in items %}
           <li class="nav-item"> <a href="/projects/{{ item.slug }}"> {{ item.title }} </a></li>
           {% endfor %}
         </ul>
       </nav>
-    </div>
-  </div>
-</div>
+
