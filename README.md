@@ -8,7 +8,7 @@ See [this website](http://von-zimmerman.com/paul) to see it in action.
 
 To see exactly what content is editable through the back-end, check out [Display Case](https://octobercms.com/plugin/vonzimmerman-displaycase).
 
-###Setup
+### Setup
 
 #### Customize color scheme
 Agency allows you to choose the palette of your website (primary, secondary, and primary tint). To pick new colors navigate the the back-end and follow these steps:
