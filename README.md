@@ -1,4 +1,4 @@
-# Agency
+http://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.png# Agency
 
 ![Agency Banner](http://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.png)
 
@@ -16,7 +16,7 @@ Agency allows you to choose the palette of your website (primary, secondary, and
 - Go to the Settings tab
 - navigate to the front-end theme section
 - In the Agency section click the `Customize` button 
--  Primary color sets the background and borders.
+-  Primary color sets the background and bohttp://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.pngrders.
 - Secondary color sets the highlight color on the main page and the scroll bars. 
 - Primary tint is used for links and various hover effects
 
@@ -77,7 +77,9 @@ iOS:
 
 If you notice any issues please report them with the browser version and the oprating system you're on. Much appreciated!
 
-## Developing!
+## Contributing!
+
+Here's what you should know in order to get started:
 
 ### Layouts and pages
 There are three htm files. 
@@ -96,7 +98,13 @@ You can substitute all the yarn commands for npm commands if you wish.
 - `yarn build` will build the assets for production
 
 #### Styles
+
 ##### SCSS
 The base styles are written in SCSS and live in the `src/scss` directory. Organized according to SMACSS.
+
 ##### Less
-Since Less seems to have better support when it comes to combiner variables, it's used it for anything concerning the theme (mostly colors). The Less files live in  `assets/theme/theme.less`.
+Since Less seems to have better support when it comes to combiner variables, it's used for anything concerning the theme (mostly colors). The Less files are located in `assets/theme/theme.less`.
+
+### Donating
+The theme is on the [October Marketplace](http://octobercms.com/account/theme/edit/187). Useful if you want to add Agency to an October project.
+
