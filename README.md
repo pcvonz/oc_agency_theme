@@ -1,4 +1,7 @@
 # Agency
+
+![Agency Banner](http://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.png)
+
 A professional fully responsive portfolio website with a distinct layout. All of the content is managed through October’s back-end (via the Display Case plugin). No need to edit pages or templates! 
 
 See [this website](http://von-zimmerman.com/paul) to see it in action.
@@ -83,7 +86,7 @@ There are three htm files.
 - `pages/projects.htm` Project descriptions and screenshots (based on a URL parameter).
 
 ### Customizing the theme
-The theme is built through Webpack. Make sure you have node and npm (or yarn) installed.
+The theme is built with Webpack. Make sure you have node and npm (or yarn) installed.
 
 #### Scripts
 You can substitute all the yarn commands for npm commands if you wish. 
