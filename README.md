@@ -1,4 +1,4 @@
-http://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.png# Agency
+# Agency
 
 ![Agency Banner](http://octobercms.com/storage/app/uploads/public/59e/bfa/0de/59ebfa0de6724289762651.png)
 
